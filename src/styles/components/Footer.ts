@@ -1,0 +1,56 @@
+import { styled } from "..";
+
+export const FooterContainer = styled('footer', {
+  backgroundColor: '$purpleCodify900B ',
+
+  height: '15.625rem',
+
+  padding: '2rem 0',
+
+  display: 'flex',
+  justifyContent: 'center',
+})
+
+export const Content = styled('div', {
+  maxWidth: '1440px', 
+  width: '100%',
+
+  display: 'flex',
+  justifyContent: 'space-between',
+})
+
+export const Contact = styled('div', {
+  h3: {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    fontFamily: 'PT Sans',
+  },
+
+  div: {
+    display: 'flex',
+    justifyContent: 'space-between',
+
+    paddingTop: '1.5rem',
+
+    a: {
+      color: '$blue500',
+
+      cursor: 'pointer',
+
+      '&:hover': {
+        transition: 'all 0.3s ease-in-out',
+        '-webkit-transition': '0.5s ease-in',
+        rotate: '360deg',
+      }
+    }
+  }
+})
+
+export const Codify = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.5rem',
+
+  fontFamily: 'PT Sans',
+  fontSize: '1.5rem',
+})
