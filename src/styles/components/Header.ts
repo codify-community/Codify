@@ -4,11 +4,14 @@ export const HeaderContainer = styled('header', {
   variants: {
     isScrolled: {
       true: {
-        'backdrop-filter': 'blur(15px)',
-        'box-shadow': '0 6px 15px 0 rgba(0, 0, 0, 0.25)',
+        boxShadow: '0 6px 15px 0 rgba(0, 0, 0, 0.25)',
+        'backdrop-filter': 'blur(7.5px)',
       },
     },
   },
+  
+  zIndex: 1,
+
   position: "sticky",
   top: 0,
 
