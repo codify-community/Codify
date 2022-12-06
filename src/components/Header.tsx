@@ -34,13 +34,7 @@ export function Header() {
         </Link>
 
         <Navigation>
-          <Link href="/about">
-            <p>CodeFreelas</p>
-          </Link>
-          <Link href="/about">
-            <p>CodeFreelas</p>
-          </Link>
-          <Link href="/about">
+          <Link href="/CodeFreelas">
             <p>CodeFreelas</p>
           </Link>
         </Navigation>

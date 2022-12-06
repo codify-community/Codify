@@ -12,6 +12,7 @@ export const Banner = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
 
+  maxHeight: '56.937rem',
   height: '56.937rem',
 
   paddingTop: '7.5rem',
@@ -33,7 +34,7 @@ export const Banner = styled('div', {
     filter: 'blur(8px)',
 
     zIndex: -1, 
-  }
+  },
 })
 
 export const Content = styled('div', {
@@ -83,4 +84,63 @@ export const Content = styled('div', {
       backgroundColor: '$blue500',
     }
   }
+})
+
+export const Wave = styled('div', {
+  marginTop: -380,
+
+  width: '100%',
+  height: 400,
+
+  position: 'relative',
+
+  img: {
+    objectFit: 'cover',
+  },
+})
+
+export const AboutContainer = styled('section', {
+  margin: '0 auto',
+  maxWidth: '1440px',
+  width: '100%',
+})
+
+export const About = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
+
+  p: {
+    fontFamily: 'PT Sans',
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    maxWidth: '50rem',
+  }
+})
+
+export const DetailCards = styled('div', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(14.312rem, 1fr))',  
+  justifyContent: 'space-between',
+
+  gap: '2.5rem',
+
+  marginTop: '2rem',
+  marginBottom: '10.25rem',
+})
+
+export const CardSection = styled('section', {
+  display: 'flex',
+  flexDirection: 'column',
+
+  margin: '0 auto',
+
+  maxWidth: '1440px',
+  width: '100%',
+})
+
+export const Cards = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
+
+  marginBottom: '10.25rem',
 })
