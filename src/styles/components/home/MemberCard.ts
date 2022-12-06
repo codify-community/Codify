@@ -11,11 +11,9 @@ export const MemberCardContainer = styled('div', {
   
   borderRadius: 8,
 
-  transition: 'all 0.3s ease-in-out',
+  transition: 'background-color 0.3s ease-in-out',
 
   boxShadow: '0px 0px 45px 1px rgba(0, 0, 0, 0.25)',
-
-  width: 424,
 
   '&:hover': {
     backgroundColor: '$purpleCodify900B',

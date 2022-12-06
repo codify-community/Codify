@@ -139,8 +139,5 @@ export const CardSection = styled('section', {
 })
 
 export const Cards = styled('div', {
-  display: 'flex',
-  justifyContent: 'space-between',
-
   marginBottom: '10.25rem',
 })

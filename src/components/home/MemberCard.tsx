@@ -8,7 +8,7 @@ import { Tag } from "../Tag";
 
 export function MemberCard() {
   return (
-    <MemberCardContainer>
+    <MemberCardContainer className="keen-slider__slide">
       <Role>MOD</Role>
 
       <Info>
