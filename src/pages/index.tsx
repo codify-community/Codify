@@ -1,13 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
+import Slider from "react-slick";
+
 import { DiscordLogo } from "phosphor-react";
 
 import WaveSvg from "../assets/wave.svg"
 import AboutImage from "../assets/aboutMe.png"
 
-import { TypeAnimation } from "react-type-animation";
 
 import { About, AboutContainer, Banner, CardSection, Container, Content, DetailCards, Wave, Cards } from "../styles/pages/home";
+
 import { Title } from "../components/Title";
 import { DetailCard } from "../components/home/DetailCard";
 import { MemberCard } from "../components/home/MemberCard";
