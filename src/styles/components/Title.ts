@@ -7,4 +7,8 @@ export const Text = styled('h2', {
 
   textShadow: '2px 2px 3px rgba(0, 224, 255, 0.6)',
   marginBottom: '3.75rem',
+
+  '@media (max-width: 327px)': {
+    fontSize: '5.8rem',
+  }
 })
