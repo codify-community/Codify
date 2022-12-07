@@ -83,7 +83,12 @@ export const Content = styled('div', {
       transition: 'all 0.3s ease-in-out',
       backgroundColor: '$blue500',
     }
-  }
+  },
+
+  '@media (max-width: 525px)': {
+    textAlign: 'center',
+    padding: '0 1rem',
+  },
 })
 
 export const Wave = styled('div', {
@@ -103,11 +108,27 @@ export const AboutContainer = styled('section', {
   margin: '0 auto',
   maxWidth: '1440px',
   width: '100%',
+
+  padding: '0 1rem',
 })
 
 export const About = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
+
+  '@media (max-width: 935px)': {
+    flexDirection: 'column',
+
+    alignItems: 'center',
+    textAlign: 'center',
+  },
+
+  '@media (max-width: 488px)': {
+    img: {
+      width: '100%',
+      height: 'auto',
+    }
+  },
 
   p: {
     fontFamily: 'PT Sans',
@@ -120,12 +141,23 @@ export const About = styled('div', {
 export const DetailCards = styled('div', {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(14.312rem, 1fr))',  
-  justifyContent: 'space-between',
 
   gap: '2.5rem',
 
   marginTop: '2rem',
   marginBottom: '10.25rem',
+
+  '@media (max-width: 1067px) and (min-width: 799px)': {
+    ':last-child': {
+      gridColumn: '1 / span 3',
+    }
+  },
+
+  '@media (max-width: 700px) and (min-width: 600px)': {
+    ':last-child': {
+      gridColumn: '1 / span 3',
+    }
+  }
 })
 
 export const CardSection = styled('section', {
@@ -133,6 +165,7 @@ export const CardSection = styled('section', {
   flexDirection: 'column',
 
   margin: '0 auto',
+  padding: '0 1rem',
 
   maxWidth: '1440px',
   width: '100%',

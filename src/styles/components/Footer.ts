@@ -3,9 +3,9 @@ import { styled } from "..";
 export const FooterContainer = styled('footer', {
   backgroundColor: '$purpleCodify900B',
 
-  height: '15.625rem',
+  
 
-  padding: '2rem 0',
+  padding: '2rem 1rem',
   marginTop: '10.25rem',
 
   display: 'flex',
@@ -20,6 +20,11 @@ export const Content = styled('div', {
 
   display: 'flex',
   justifyContent: 'space-between',
+
+  '@media (max-width: 525px)': {
+    flexDirection: 'column',
+    gap: '1.5rem',
+  }
 })
 
 export const Contact = styled('div', {

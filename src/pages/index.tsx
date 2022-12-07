@@ -23,10 +23,10 @@ const sliderConfig = {
     spacing: 48,
   },
   breakpoints: {
-    '(max-width: 1024px)': {
+    '(max-width: 1246px)': {
       slides: {
         perView: 2,
-        spacing: 32,
+        spacing: 16,
       },
     },
     '(max-width: 499px)': {
@@ -73,7 +73,6 @@ export default function Home() {
       slider.on("updated", nextTimeout)
     },
   ])
-
   const [boosterSliderRef] = useKeenSlider(
     {
       ...sliderConfig
@@ -107,7 +106,7 @@ export default function Home() {
         slider.on("animationEnded", nextTimeout)
         slider.on("updated", nextTimeout)
       },
-    ])
+  ])
 
   return (
     <>

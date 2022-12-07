@@ -18,9 +18,16 @@ export const HeaderContainer = styled('header', {
   display: 'flex',
   justifyContent: 'center',
 
-  padding: '1rem 0',
+  padding: '1rem 1rem',
 
-  'transition': 'all 0.3s ease',
+  transition: 'all 0.3s ease',
+
+  '@media (max-width: 525px)': {
+    img: {
+      width: '100px',
+      height: 'auto',
+    }
+  },
 })
 
 export const Content = styled('div', {

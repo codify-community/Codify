@@ -36,5 +36,11 @@ export const globalStyles = globalCss({
     fontSize: '1rem',
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 400,
+  },
+
+  '@media (max-width: 700px)': {
+    ':root': {
+      fontSize: 12,
+    }
   }
 })
