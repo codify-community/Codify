@@ -147,7 +147,7 @@ export const DetailCards = styled('div', {
   marginTop: '2rem',
   marginBottom: '10.25rem',
 
-  '@media (max-width: 1067px) and (min-width: 799px)': {
+  '@media (max-width: 1079px) and (min-width: 799px)': {
     ':last-child': {
       gridColumn: '1 / span 3',
     }
