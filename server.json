@@ -1,0 +1,125 @@
+{
+  "details": [
+    {
+      "id": 1,
+      "title": "Canais",
+      "value": 80
+    },
+    {
+      "id": 2,
+      "title": "Membros",
+      "value": 7125
+    },
+    {
+      "id": 3,
+      "title": "Staffs",
+      "value": 15
+    },
+    {
+      "id": 4,
+      "title": "Anos",
+      "value": 2
+    }
+  ],
+  "staffs": [
+    {
+      "id": 796195853278773308,
+      "role": "mod",
+      "avatar": "https://images-ext-2.discordapp.net/external/9zGB6Kl24tJfvML88dt_jXeSXGdQvpCJ_9bppULZPrE/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/319637457907875841/a_7986ce1705d96c75a0656c299ff3d0a5.gif",
+      "name": "S0ra",
+      "ocupation": "Rust Developer <3",
+      "description": "Rust is my live and i live in acre Brazil.",
+      "github": "https://github.com/S0raWasTaken",
+      "technologies": [
+        "Rust",
+        "C#",
+        "C++",
+        "Python",
+        "Java",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "id": 796195853278712308,
+      "role": "admin",
+      "avatar": "https://images-ext-2.discordapp.net/external/4_xnJP40GkSDXodEpYVtfgiRqyp65nNJujXnoXcQQZw/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/696439841529004123/8b38b5c66080f80eb85ba8200b8417c4.png",
+      "name": "nonamescm",
+      "ocupation": "Rust Developer <3",
+      "description": "Rust is my live and i live in Brazil. (With S0ra ❤)",
+      "github": "https://github.com/nonamescm",
+      "technologies": [
+        "Rust"
+      ]
+    },
+    {
+      "id": 796195853272873308,
+      "role": "owner",
+      "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png",
+      "name": "Bielgomes",
+      "ocupation": "Front-End Developer",
+      "description": "I Hate Rust, so i Love JavaScript and Typescript",
+      "github": "https://github.com/Bielgomes",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ],
+  "boosters": [
+    {
+      "id": 756195853272873308,
+      "role": "booster",
+      "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png",
+      "name": "Bielgomes",
+      "ocupation": "Front-End Developer",
+      "description": "I Hate Rust, so i Love JavaScript and Typescript",
+      "github": "https://github.com/Bielgomes",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "id": 791195853272873308,
+      "role": "booster",
+      "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png",
+      "name": "Bielgomes",
+      "ocupation": "Front-End Developer",
+      "description": "I Hate Rust, so i Love JavaScript and Typescript",
+      "github": "https://github.com/Bielgomes",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "id": 796194853272873308,
+      "role": "booster",
+      "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png",
+      "name": "Bielgomes",
+      "ocupation": "Front-End Developer",
+      "description": "I Hate Rust, so i Love JavaScript and Typescript",
+      "github": "https://github.com/Bielgomes",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ],
+  "users": [
+    {}
+  ],
+  "posts": [
+    {}
+  ]
+}
