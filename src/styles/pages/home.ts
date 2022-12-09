@@ -119,7 +119,9 @@ export const About = styled('div', {
   '@media (max-width: 935px)': {
     flexDirection: 'column',
 
-    alignItems: 'center',
+    img: {
+      alignSelf: 'center',
+    }
   },
 
   '@media (max-width: 488px)': {
