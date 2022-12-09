@@ -120,7 +120,6 @@ export const About = styled('div', {
     flexDirection: 'column',
 
     alignItems: 'center',
-    textAlign: 'center',
   },
 
   '@media (max-width: 488px)': {

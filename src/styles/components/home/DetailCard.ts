@@ -8,16 +8,16 @@ export const DetailCardContainer = styled('div', {
 
   backgroundColor: '$purpleCodify700',
 
+  borderRadius: 16,
+
   boxShadow: '0px 0px 45px 1px rgba(0, 0, 0, 0.25)',
 
   transition: 'all 0.3s ease-in-out',
 
-  borderRadius: 16,
-
-  height: '100%',
-
   padding: '3.75rem 0',
   gap: '1.75rem',
+  
+  height: '100%',
 
   strong: {
     fontSize: '3rem',

@@ -115,4 +115,5 @@ export const Skills = styled('div', {
   gap: '0.375rem',
 
   marginTop: '0.375rem',
+  overflow: 'hidden',
 })
