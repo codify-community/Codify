@@ -1,3 +1,4 @@
+import { before } from 'node:test';
 import { styled } from '../..';
 
 export const MemberCardContainer = styled('div', {
@@ -25,7 +26,7 @@ export const Role = styled('div', {
   top: '2.375rem',
   left: '2.375rem',
 
-  padding: '0.5rem 1rem',
+  padding: '0.4rem 1rem',
 
   backgroundColor: '$blue500',
 
@@ -33,6 +34,24 @@ export const Role = styled('div', {
 
   fontFamily: 'PT Sans',
   fontWeight: 'bold',
+  fontSize: '1rem',
+
+  variants: {
+    role: {
+      "booster": {
+        backgroundColor: '$purpleCodify500',
+      },
+      "mod": {
+        backgroundColor: '$blue500',
+      },
+      "admin": {
+        backgroundColor: '$red500',
+      },
+      "owner": {
+        backgroundColor: '$yellow500',
+      }
+    }
+  }
 })
 
 export const Info = styled('div', {

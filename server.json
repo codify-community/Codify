@@ -3,22 +3,22 @@
     {
       "id": 1,
       "title": "Canais",
-      "value": 80
+      "value": "80"
     },
     {
       "id": 2,
       "title": "Membros",
-      "value": 7125
+      "value": "7125"
     },
     {
       "id": 3,
       "title": "Staffs",
-      "value": 15
+      "value": "15"
     },
     {
       "id": 4,
       "title": "Anos",
-      "value": 2
+      "value": "2"
     }
   ],
   "staffs": [

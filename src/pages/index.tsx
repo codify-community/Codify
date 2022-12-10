@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -14,6 +15,7 @@ import { About, AboutContainer, Banner, CardSection, Container, Content, DetailC
 import { Title } from "../components/Title";
 import { DetailCard } from "../components/home/DetailCard";
 import { MemberCard } from "../components/home/MemberCard";
+import { api } from "../lib/axios";
 
 const sliderConfig = {
   loop: true,
@@ -67,7 +69,30 @@ const sliderAnimationConfig = (slider: KeenSliderInstance) => {
   slider.on("updated", nextTimeout)
 }
 
-export default function Home() {
+interface HomeProps {
+  details: Details[]
+  staffs: Member[]
+  boosters: Member[]
+}
+
+interface Details {
+  id: number
+  title: string
+  value: string
+}
+
+interface Member {
+  id: number
+  role: 'mod' | 'admin' | 'owner' | 'booster'
+  avatar: string
+  name: string
+  ocupation: string
+  description: string
+  github: string
+  technologies: string[]
+}
+
+export default function Home({ details, staffs, boosters }: HomeProps) {
   const [staffSliderRef] = useKeenSlider(
   {
     ...sliderConfig
@@ -160,10 +185,9 @@ export default function Home() {
           </About>
 
           <DetailCards>
-            <DetailCard title="Canais" value="80" />
-            <DetailCard title="Membros" value="7125" />
-            <DetailCard title="Staffs" value="15" />
-            <DetailCard title="Anos" value="2" />
+            {details.map(detail => (
+              <DetailCard key={detail.id} title={detail.title} value={detail.value} />
+            ))}
           </DetailCards>
         </AboutContainer>
 
@@ -171,25 +195,35 @@ export default function Home() {
           <Title text="Staffs" />
           
           <Cards ref={staffSliderRef} className="keen-slider">
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
+            {staffs.map((member: Member) => (
+              <MemberCard key={member.id} member={member}  />
+            ))}
           </Cards>
 
           <Title text="Boosters" />
           
           <Cards ref={boosterSliderRef} className="keen-slider">
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
+            {boosters.map((member: Member) => (
+              <MemberCard key={member.id} member={member}  />
+            ))}
           </Cards>
         </CardSection>
       </Container>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const details = await api.get('/details')
+  const staffs = await api.get('/staffs')
+  const boosters = await api.get('/boosters')
+
+  return {
+    props: {
+      details: details.data,
+      staffs: staffs.data,
+      boosters: boosters.data,
+    },
+    revalidate: 60 * 15 // 15 minutes
+  }
 }

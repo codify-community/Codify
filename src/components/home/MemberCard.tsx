@@ -3,22 +3,34 @@ import Image from "next/image";
 import { GithubLogo } from "phosphor-react";
 import { MemberCardContainer, Info, Skills, Role, SkillsContainer } from "../../styles/components/home/MemberCard";
 
-import Sora from "../../assets/sora.png";
 import { Tag } from "../Tag";
 
-export function MemberCard() {
+interface MemberCardProps {
+  member: {
+    id: number
+    role: 'mod' | 'admin' | 'owner' | 'booster'
+    avatar: string
+    name: string
+    ocupation: string
+    description: string
+    github: string
+    technologies: string[]
+  }
+}
+
+export function MemberCard({ member }: MemberCardProps) {
   return (
     <MemberCardContainer className="keen-slider__slide">
-      <Role>MOD</Role>
+      <Role role={member.role}>{member.role.toUpperCase()}</Role>
 
       <Info>
-        <Image src={Sora} alt="" width={100} height={100} />
-        <strong>Rust Maniac</strong>
-        <span>Rust is Rust OKEY</span>
+        <Image src={member.avatar} alt="" width={100} height={100} />
+        <strong>{member.name}</strong>
+        <span>{member.ocupation}</span>
 
-        <p>Estudante no Instituto Federal Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+        <p>{member.description}</p>
 
-        <a href="">
+        <a href={member.github} target="_blank" rel="noreferrer">
           <GithubLogo weight="fill" size={42} />
         </a>
       </Info>
@@ -27,13 +39,9 @@ export function MemberCard() {
         <p>Habilidades</p>
         
         <Skills>
-          <Tag name="C" />
-          <Tag name="CSS" />
-          <Tag name="PYTHON" />
-          <Tag name="HTML" />
-          <Tag name="PYTHON" />
-          <Tag name="PYTHON" />
-          <Tag name="PYTHON" />
+          {member.technologies.map(technology => (
+            <Tag key={technology} name={technology} />
+          ))}
         </Skills>
       </SkillsContainer>
     </MemberCardContainer>
