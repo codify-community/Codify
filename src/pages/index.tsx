@@ -5,6 +5,8 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
 
+import { api } from "../lib/axios";
+
 import 'keen-slider/keen-slider.min.css'
 import WaveSvg from "../assets/wave.svg"
 import AboutImage from "../assets/aboutMe.png"
@@ -15,7 +17,6 @@ import { About, AboutContainer, Banner, CardSection, Container, Content, DetailC
 import { Title } from "../components/Title";
 import { DetailCard } from "../components/home/DetailCard";
 import { MemberCard } from "../components/home/MemberCard";
-import { api } from "../lib/axios";
 
 const sliderConfig = {
   loop: true,

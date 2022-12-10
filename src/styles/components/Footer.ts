@@ -51,6 +51,12 @@ export const Contact = styled('div', {
         rotate: '360deg',
       }
     }
+  },
+
+  '@media (max-width: 525px)': {
+    svg: {
+      width: '6rem',
+    }
   }
 })
 

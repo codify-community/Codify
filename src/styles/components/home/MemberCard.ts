@@ -95,7 +95,7 @@ export const Info = styled('div', {
 
   a: {
     marginTop: '1.5rem',
-    padding: '0.2rem',
+    padding: '0.2rem 0.3rem',
 
     border: '1px solid $white',
     borderRadius: 6,

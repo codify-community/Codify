@@ -79,8 +79,9 @@ export const Content = styled('div', {
     border: '3px solid $blue500',
     borderRadius: '999px',
 
+    transition: 'background-color 0.3s ease-in-out',
+
     '&:hover': {
-      transition: 'all 0.3s ease-in-out',
       backgroundColor: '$blue500',
     }
   },
