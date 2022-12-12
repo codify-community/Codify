@@ -3,10 +3,7 @@ import { styled } from "..";
 export const FooterContainer = styled('footer', {
   backgroundColor: '$purpleCodify900B',
 
-  
-
   padding: '2rem 1rem',
-  marginTop: '10.25rem',
 
   display: 'flex',
   justifyContent: 'center',

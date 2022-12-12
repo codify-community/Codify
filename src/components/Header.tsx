@@ -29,12 +29,12 @@ export function Header() {
   return (
     <HeaderContainer isScrolled={isScrolled}>
       <Content>
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <Image src={Logo} alt="" width={190} height={73} />
         </Link>
 
         <Navigation>
-          <Link href="/CodeFreelas">
+          <Link href="/codefreelas" prefetch={false}>
             <p>CodeFreelas</p>
           </Link>
         </Navigation>

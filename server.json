@@ -117,9 +117,98 @@
     }
   ],
   "users": [
-    {}
+    {
+      "id": 796195853272873308,
+      "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png",
+      "banner": "https://images-ext-1.discordapp.net/external/UbHx_o6Ccr5MGCQrP5e56lF_KylKO-qCJ1UtJzzPaeE/https/i.pinimg.com/564x/ec/b9/2d/ecb92d18c7855c986a5571c1b6f7cad2.jpg",
+      "name": "Bielgomes",
+      "whatsapp": "",
+      "instagram": "",
+      "total_posts": 0,
+      "active_posts": 0
+    }
   ],
   "posts": [
-    {}
+    {
+      "id": 112233445566,
+      "title": "Hello World",
+      "description": "This is a test post",
+      "price": 300,
+      "deadline": "1 Semana",
+      "author": {
+        "id": 796195853272873308,
+        "name": "Bielgomes",
+        "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png"
+      },
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 112233445567,
+      "title": "Hello World",
+      "description": "This is a test post",
+      "price": 300,
+      "deadline": "1 Semana",
+      "author": {
+        "id": 796195853272873308,
+        "name": "Bielgomes",
+        "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png"
+      },
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 112233445568,
+      "title": "Hello World",
+      "description": "This is a test post",
+      "price": 300,
+      "deadline": "1 Semana",
+      "author": {
+        "id": 796195853272873308,
+        "name": "Bielgomes",
+        "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png"
+      },
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 112233445569,
+      "title": "Titulo Foda Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem...",
+      "description": "Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum Descrição Foda Lorem Ipsum...",
+      "price": 300,
+      "deadline": "1 Semana",
+      "author": {
+        "id": 796195853272873308,
+        "name": "Bielgomes",
+        "avatar": "https://images-ext-1.discordapp.net/external/7TVS37wnJ39VwDY6iD13p9NrNEdI2FUDG06uE_elIqQ/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/796195853278773308/d37f65111ac451f869888ae22444f16e.png"
+      },
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Rust",
+        "C++",
+        "C#",
+        "Python",
+        "Java",
+        "PHP",
+        "C",
+        "Go",
+        "Ruby"
+      ],
+      "createdAt": "2022-12-12T19:08:00.000Z"
+    }
   ]
 }
