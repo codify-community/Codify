@@ -1,31 +1,58 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useRouter } from 'next/router' 
+import { useRouter } from 'next/router'
 import { api } from '../../../lib/axios'
 
+import { FreelaHeader } from '../../../components/freela/FreelaHeader'
+import { Freela } from '..'
+import { Loading } from '../../../components/Loading'
+
+import { FreelaContainer, Header, Content } from '../../../styles/pages/codefreelas/freela'
+
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
 interface FreelaPageProps {
-  freela: {
-    id: number
-    title: string
-    description: string
-    price: number
-    deadline: string
-    author: {
-      id: number
-      name: string
-      avatar: string
-    }
-    technologies: string[]
-    createdAt: Date
-  }
+  freela: Freela
 }
 
 export default function FreelaPage({ freela }: FreelaPageProps) {
-  console.log(freela)
+  const { isFallback } = useRouter()
+
+  if (isFallback) {
+    return <Loading />
+  }
+
+  const text = `
+  A paragraph with *emphasis* and **strong importance**.
+
+  > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+  
+  * Lists
+  * [ ] todo
+  * [x] done
+  
+  1. ordered
+  2. list
+  
+  A table:
+  
+  | a | b | 
+  | - | - |
+  | casdasd | asdad |
+`
 
   return (
-    <>
-      <h1>Work in progress</h1>
-    </>
+    <FreelaContainer>
+      <Header>
+        <h1>Code Freelas</h1>
+        <FreelaHeader freela={freela} />
+      </Header>
+      <Content>
+        <div>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+        </div>
+      </Content>
+    </FreelaContainer>
   )
 }
 
@@ -48,7 +75,7 @@ export const getStaticProps: GetStaticProps<any, { freelaId: string }> = async (
   return {
     props: {
       freela: {
-        ...freela.data
+        ...freela.data[0],
       }
     },
     revalidate: 60 * 60 * 1 // 1 hour

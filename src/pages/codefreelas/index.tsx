@@ -12,7 +12,7 @@ interface HomeProps {
   freelas: Freela[];
 }
 
-interface Freela {
+export interface Freela {
   id: number
   title: string
   description: string

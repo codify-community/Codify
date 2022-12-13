@@ -8,22 +8,10 @@ import { Content, Footer, FreelaCardContainer, FreelaLink, Header, Tags } from "
 
 import { Tag } from "./Tag";
 import { theme } from "../styles";
+import { Freela } from "../pages/codefreelas";
 
 interface FreelaCardProps {
-  freela: {
-    id: number
-    title: string
-    description: string
-    price: number
-    deadline: string
-    author: {
-      id: number
-      name: string
-      avatar: string
-    }
-    technologies: string[]
-    createdAt: Date
-  }
+  freela: Freela
 }
 
 export function FreelaCard({ freela }: FreelaCardProps) {
