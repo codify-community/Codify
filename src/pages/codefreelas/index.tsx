@@ -19,9 +19,11 @@ export interface Freela {
   price: number
   deadline: string
   author: {
-    id: number;
-    name: string;
-    avatar: string;
+    id: number
+    name: string
+    avatar: string
+    whatsapp: string
+    instagram: string
   }
   technologies: string[]
   createdAt: Date

@@ -78,7 +78,7 @@ export const FreelasContainer = styled('div', {
   margin: '0 auto',
   marginBottom: '10rem',
 
-  maxWidth: '1440px',
+  maxWidth: 1440,
   width: '100%',
 })
 

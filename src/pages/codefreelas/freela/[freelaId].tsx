@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { api } from '../../../lib/axios'
 
-import { FreelaHeader } from '../../../components/freela/FreelaHeader'
+import { FreelaHeader } from '../../../components/codefreelas/FreelaHeader'
 import { Freela } from '..'
 import { Loading } from '../../../components/Loading'
 
@@ -10,6 +10,7 @@ import { FreelaContainer, Header, Content } from '../../../styles/pages/codefree
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Head from 'next/head'
 
 interface FreelaPageProps {
   freela: Freela
@@ -42,17 +43,25 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
 `
 
   return (
-    <FreelaContainer>
-      <Header>
-        <h1>Code Freelas</h1>
-        <FreelaHeader freela={freela} />
-      </Header>
-      <Content>
-        <div>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
-        </div>
-      </Content>
-    </FreelaContainer>
+    <>
+      <Head>
+        <title>Codify Community</title>
+        <link rel="icon" href="/icon.png" />
+      </Head>
+
+      <FreelaContainer>
+        <Header>
+          <h1>Code Freelas</h1>
+          <FreelaHeader freela={freela} />
+        </Header>
+        
+        <Content>
+          <div>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+          </div>
+        </Content>
+      </FreelaContainer>
+    </>
   )
 }
 

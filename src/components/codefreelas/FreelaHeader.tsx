@@ -5,7 +5,7 @@ import { ptBR } from "date-fns/locale"
 
 import { Clock, CurrencyDollar, DiscordLogo, InstagramLogo, WhatsappLogo } from "phosphor-react"
 
-import { Author, FreelaHeaderContainer, Profile, Header, Tags, Info, FreelaHeaderLink, Contact } from "../../styles/components/freela/FreelaHeader"
+import { Author, FreelaHeaderContainer, Profile, Header, Tags, Info, FreelaHeaderLink, Contact } from "../../styles/components/codefreelas/FreelaHeader"
 import { theme } from "../../styles"
 
 import { Freela } from "../../pages/codefreelas"
@@ -35,12 +35,12 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
             <a href={`https://discordapp.com/users/${freela.author.id}`} target="_blank" rel="noreferrer">
               <DiscordLogo weight="fill" size={33} color={theme.colors.blue500.value} />
             </a>
-            <a href="https://google.com" target="_blank" rel="noreferrer">
+            {freela.author.whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
               <WhatsappLogo weight="fill" size={33} color={theme.colors.green400.value} />
-            </a>
-            <a href="https://google.com" target="_blank" rel="noreferrer">
+            </a>}
+            {freela.author.instagram && <a href="https://google.com" target="_blank" rel="noreferrer">
               <InstagramLogo weight="fill" size={33} color={theme.colors.yellow500.value} />
-            </a>
+            </a>}
           </Contact>
         </Author>
         <time dateTime={new Date(freela.createdAt).toISOString()}>{FormattedDate}</time>
