@@ -1,6 +1,8 @@
 import { styled } from "../..";
 
-export const FormContainer = styled('div')
+export const FormContainer = styled('div', {
+  padding: '0 1rem',
+})
 
 export const Form = styled('form', {
   display: 'flex',
@@ -14,6 +16,8 @@ export const Form = styled('form', {
   width: '100%',
 
   h1: {
+    textAlign: 'center',
+    
     fontWeight: 700,
     lineHeight: '130%',
     fontSize: '6rem',
@@ -23,7 +27,6 @@ export const Form = styled('form', {
   },
 
   p: {
-    width: '60rem',
     textAlign: 'center',
 
     marginBottom: '2.5rem',
@@ -65,6 +68,7 @@ export const Content = styled('main', {
   display: 'flex',
   flexDirection: 'column',
 
+  padding: '0 1rem',
   paddingTop: '11.25rem',
 
   backgroundColor: '$purpleCodify900B'
@@ -83,4 +87,8 @@ export const Freelas = styled('div', {
   gridTemplateColumns: 'repeat(2, 1fr)',
 
   gap: '4rem 2rem',
+
+  '@media (max-width: 800px)': {
+    gridTemplateColumns: '1fr',
+  }
 })

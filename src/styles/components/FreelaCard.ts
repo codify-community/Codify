@@ -10,7 +10,7 @@ export const FreelaCardContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
 
-  height: 440,
+  height: '100%',
 
   backgroundColor: '$purpleCodify900',
   borderRadius: 16,
@@ -39,7 +39,7 @@ export const Header = styled('header', {
     display: 'flex',
     alignItems: 'center',
 
-    gap: '0.375rem',
+    gap: 6,
     
     img: {
       borderRadius: '50%',

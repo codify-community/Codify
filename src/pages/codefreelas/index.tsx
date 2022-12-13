@@ -45,7 +45,7 @@ export default function Home({ freelas }: HomeProps) {
 
       <Content>
         <FreelasContainer>
-          <Title text="4 Resultados" />
+          <Title text="400 Resultados" />
 
           <Freelas>
             {freelas.map(freela => (
@@ -64,6 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       freelas: response.data
-    }
+    },
+    revalidate: 60 * 15 // 15 minutes
   }
 }

@@ -32,8 +32,10 @@ export function FreelaCard({ freela }: FreelaCardProps) {
     addSuffix: true,
   })
 
+  const FormattedDescription = freela.description.length > 240 ? `${freela.description.substring(0, 240)}...` : freela.description
+
   return (
-    <FreelaLink href={'/'} prefetch={false}>
+    <FreelaLink href={`codefreelas/freela/${freela.id}`} prefetch={false}>
       <FreelaCardContainer>
         <Header>
           <div>
@@ -45,7 +47,7 @@ export function FreelaCard({ freela }: FreelaCardProps) {
 
         <Content>
           <h3>{freela.title}</h3>
-          <p>{freela.description}</p>
+          <p>{FormattedDescription}</p>
 
           <strong>Tecnologias</strong>
           <Tags>

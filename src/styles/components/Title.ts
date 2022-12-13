@@ -9,6 +9,6 @@ export const Text = styled('h2', {
   marginBottom: '3.75rem',
 
   '@media (max-width: 327px)': {
-    fontSize: '5.8rem',
+    fontSize: '4rem',
   }
 })
