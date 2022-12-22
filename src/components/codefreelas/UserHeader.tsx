@@ -14,14 +14,9 @@ interface UserHeaderProps {
 }
 
 export function UserHeader({ user }: UserHeaderProps) {
-  const FormattedDate = formatDistanceToNow(new Date(user.createdAt), {
-    locale: ptBR,
-    addSuffix: true,
-  })
-
   return (
     <UserHeaderContainer>
-      <Image src={user.avatar} alt="" width={148} height={148} />
+      <Image src={user.avatar_url} alt="" width={148} height={148} />
 
       <UserInformation>
         <Details>
@@ -39,7 +34,6 @@ export function UserHeader({ user }: UserHeaderProps) {
                 <InstagramLogo weight="fill" size={32} color={theme.colors.yellow500.value} />
               </a>}
             </Contact>
-            <time dateTime={new Date(user.createdAt).toISOString()}>{FormattedDate}</time>
           </div>
 
           <p>{user.description}</p>

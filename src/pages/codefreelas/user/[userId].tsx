@@ -3,13 +3,13 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Freela } from '..'
+import { ResumeFreela } from '..'
 import { FreelaCard } from '../../../components/FreelaCard'
 import { Title } from '../../../components/Title'
 import { UserHeader } from '../../../components/codefreelas/UserHeader'
 import { Loading } from '../../../components/Loading'
 
-import { codeFreelas } from '../../../lib/axios'
+import { codeFreelasApi } from '../../../lib/axios'
 
 import { Banner, UserContainer, Content, Posts, Header, ActivePostsSection } from '../../../styles/pages/codefreelas/user'
 
@@ -18,17 +18,16 @@ interface UserProps {
 }
 
 export interface User {
-  id: number
-  avatar: string
-  banner: string
+  id: string
   name: string
-  description: string
+  banner_url: string
+  avatar_url: string
   whatsapp: string
   instagram: string
+  description: string
+  freelas: ResumeFreela[]
   total_posts: number
   active_posts: number
-  posts: Freela[]
-  createdAt: Date
 }
 
 export default function UserPage({ user }: UserProps) {
@@ -47,7 +46,7 @@ export default function UserPage({ user }: UserProps) {
 
       <UserContainer>
         <Banner>
-          <Image src="https://i0.wp.com/agilecheetah.com/wp-content/uploads/2021/10/Agile-Cheetah-Thinkific-Banner-1440px.png" alt="" width={1660} height={533} />
+          <Image src={user.banner_url} alt="" width={1660} height={533} />
           <Header>
             <UserHeader user={user} />
           </Header>
@@ -58,8 +57,20 @@ export default function UserPage({ user }: UserProps) {
             <Title text='Posts ativos' />
 
             <Posts>
-              {user.posts.map(post => (
-                <FreelaCard key={post.id} freela={post} />
+              {user.freelas.map(freela => (
+                <FreelaCard
+                  key={freela.id}
+                  id={freela.id}
+                  title={freela.title}
+                  description={freela.description}
+                  price={freela.price}
+                  deadline={freela.deadline}
+                  technologies={freela.technologies}
+                  createdAt={freela.createdAt}
+                  user_id={user.id}
+                  user_avatar={user.avatar_url}
+                  user_name={user.name}
+                />
               ))}
             </Posts>
           </ActivePostsSection>
@@ -79,16 +90,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<any, { userId: string }> = async ({ params }) => {
   const userId = params?.userId
 
-  const user = await codeFreelas.get('/users', {
-    params: {
-      id: userId
-    }
-  })
+  const user = await codeFreelasApi.get(`/${userId}`)
 
   return {
     props: {
       user: {
-        ...user.data[0]
+        ...user.data
       }
     }
   }

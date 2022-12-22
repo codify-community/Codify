@@ -6,40 +6,36 @@ import { Clock, CurrencyDollar } from "phosphor-react";
 
 import { Content, Footer, FreelaCardContainer, FreelaLink, Header, Tags } from "../styles/components/FreelaCard";
 
+import { Freela } from "../pages/codefreelas/freela/[userId]/[freelaId]";
 import { Tag } from "./Tag";
 import { theme } from "../styles";
-import { Freela } from "../pages/codefreelas";
 
-interface FreelaCardProps {
-  freela: Freela
-}
-
-export function FreelaCard({ freela }: FreelaCardProps) {
-  const FormattedDate = formatDistanceToNow(new Date(freela.createdAt), {
+export function FreelaCard({ id, title, description, price, technologies, deadline, createdAt, user_id, user_avatar, user_name }: Freela) {
+  const FormattedDate = formatDistanceToNow(new Date(createdAt), {
     locale: ptBR,
     addSuffix: true,
   })
 
-  const FormattedDescription = freela.description.length > 240 ? `${freela.description.substring(0, 240)}...` : freela.description
+  const FormattedDescription = description.length > 240 ? `${description.substring(0, 240)}...` : description
 
   return (
-    <FreelaLink href={`/codefreelas/freela/${freela.id}`} prefetch={false}>
+    <FreelaLink href={`/codefreelas/freela/${user_id}/${id}`} prefetch={false}>
       <FreelaCardContainer>
         <Header>
           <div>
-            <Image src={freela.author.avatar} alt="" width={38} height={38} />
-            <p>{freela.author.name}</p>
+            <Image src={user_avatar} alt="" width={38} height={38} />
+            <p>{user_name}</p>
           </div>
-          <time dateTime={new Date(freela.createdAt).toISOString()}>{FormattedDate}</time>
+          <time dateTime={new Date(createdAt).toISOString()}>{FormattedDate}</time>
         </Header>
 
         <Content>
-          <h3>{freela.title}</h3>
+          <h3>{title}</h3>
           <p>{FormattedDescription}</p>
 
           <strong>Tecnologias</strong>
           <Tags>
-            {freela.technologies.map(technology => (
+            {technologies.map(technology => (
               <Tag key={technology} name={technology} />
               ))}
           </Tags>
@@ -48,11 +44,11 @@ export function FreelaCard({ freela }: FreelaCardProps) {
         <Footer>
           <div>
             <CurrencyDollar size={22} color={theme.colors.green400.value} />
-            <p>{freela.price}</p>
+            <p>{price}</p>
           </div>
           <div>
             <Clock size={22} color={theme.colors.gray400.value} />
-            <p>{freela.deadline}</p>
+            <p>{deadline}</p>
           </div>  
         </Footer>
       </FreelaCardContainer>

@@ -53,34 +53,11 @@ export const Details = styled('div', {
     lineHeight: '160%',
     color: '$gray400',
   },
-
-  time: {
-    position: 'absolute',
-    top: 32,
-    right: 40,
-
-    fontFamily: 'PT Sans',
-    fontSize: '0.875rem',
-    lineHeight: '160%',
-    color: '$gray400',
-
-    '@media (max-width: 660px)': {
-      top: 4,
-      left: 32,
-      right: 0,
-    },
-  }
 })
 
 export const Contact = styled('div', {
   display: 'flex',
   gap: '0.75rem',
-
-  '@media (max-width: 660px)': {
-    position: 'absolute',
-    top: 0,
-    right: 32,
-  },
 
   a: {
     display: 'flex',

@@ -8,7 +8,7 @@ import { Clock, CurrencyDollar, DiscordLogo, InstagramLogo, WhatsappLogo } from 
 import { Author, FreelaHeaderContainer, Profile, Header, Tags, Info, FreelaHeaderLink, Contact } from "../../styles/components/codefreelas/FreelaHeader"
 import { theme } from "../../styles"
 
-import { Freela } from "../../pages/codefreelas"
+import { Freela } from "../../pages/codefreelas/freela/[userId]/[freelaId]";
 import { Tag } from "../Tag"
 
 interface FreelaHeaderProps {
@@ -25,20 +25,20 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
     <FreelaHeaderContainer>
       <Header>
         <Author>
-          <FreelaHeaderLink href={`/codefreelas/user/${freela.author.id}`}>
+          <FreelaHeaderLink href={`/codefreelas/user/${freela.user_id}`}>
             <Profile>
-              <Image src={freela.author.avatar} alt="" width={38} height={38} />
-              <strong>{freela.author.name}</strong>
+              <Image src={freela.user_avatar} alt="" width={38} height={38} />
+              <strong>{freela.user_name}</strong>
             </Profile>
           </FreelaHeaderLink>
           <Contact>
-            <a href={`https://discordapp.com/users/${freela.author.id}`} target="_blank" rel="noreferrer">
+            <a href={`https://discordapp.com/users/${freela.user_id}`} target="_blank" rel="noreferrer">
               <DiscordLogo weight="fill" size={33} color={theme.colors.blue500.value} />
             </a>
-            {freela.author.whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
+            {freela.user_whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
               <WhatsappLogo weight="fill" size={33} color={theme.colors.green400.value} />
             </a>}
-            {freela.author.instagram && <a href="https://google.com" target="_blank" rel="noreferrer">
+            {freela.user_whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
               <InstagramLogo weight="fill" size={33} color={theme.colors.yellow500.value} />
             </a>}
           </Contact>

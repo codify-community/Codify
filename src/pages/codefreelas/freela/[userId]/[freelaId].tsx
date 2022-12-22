@@ -1,12 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { codeFreelas } from '../../../lib/axios'
+import { codeFreelasApi } from '../../../../lib/axios'
 
-import { FreelaHeader } from '../../../components/codefreelas/FreelaHeader'
-import { Freela } from '..'
-import { Loading } from '../../../components/Loading'
+import { FreelaHeader } from '../../../../components/codefreelas/FreelaHeader'
+import { Loading } from '../../../../components/Loading'
 
-import { FreelaContainer, Header, Content } from '../../../styles/pages/codefreelas/freela'
+import { FreelaContainer, Header, Content } from '../../../../styles/pages/codefreelas/freela'
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -16,31 +15,25 @@ interface FreelaPageProps {
   freela: Freela
 }
 
+export interface Freela {
+  id: number
+  title: string
+  description: string
+  price: number
+  deadline: string
+  technologies: string[]
+  createdAt: Date
+  user_id: string
+  user_avatar: string
+  user_name: string
+}
+
 export default function FreelaPage({ freela }: FreelaPageProps) {
   const { isFallback } = useRouter()
 
   if (isFallback) {
     return <Loading />
   }
-
-  const text = `
-  A paragraph with *emphasis* and **strong importance**.
-
-  > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-  
-  * Lists
-  * [ ] todo
-  * [x] done
-  
-  1. ordered
-  2. list
-  
-  A table:
-  
-  | a | b | 
-  | - | - |
-  | casdasd | asdad |
-`
 
   return (
     <>
@@ -57,7 +50,7 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
         
         <Content>
           <div>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{freela.description}</ReactMarkdown>
           </div>
         </Content>
       </FreelaContainer>
@@ -72,19 +65,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<any, { freelaId: string }> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<any, { userId: string, freelaId: string }> = async ({ params }) => {
+  const userId = params?.userId
   const freelaId = params?.freelaId
   
-  const freela = await codeFreelas.get('/posts', {
-    params: {
-      id: freelaId
-    }
-  })
+  const freela = await codeFreelasApi.get(`/${userId}/${freelaId}`)
   
   return {
     props: {
       freela: {
-        ...freela.data[0],
+        ...freela.data,
       }
     },
     revalidate: 60 * 60 * 1 // 1 hour

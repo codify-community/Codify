@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-import { codeFreelas } from "../../lib/axios";
+import { codeFreelasApi } from "../../lib/axios";
 
 import { FormContainer, Form, Content, FreelasContainer, Freelas } from "../../styles/pages/codefreelas/home";
 
@@ -9,24 +9,20 @@ import { Title } from "../../components/Title";
 import { FreelaCard } from "../../components/FreelaCard";
 
 interface HomeProps {
-  freelas: Freela[];
+  freelas: ResumeFreela[];
 }
 
-export interface Freela {
+export interface ResumeFreela {
   id: number
   title: string
   description: string
   price: number
   deadline: string
-  author: {
-    id: number
-    name: string
-    avatar: string
-    whatsapp: string
-    instagram: string
-  }
   technologies: string[]
   createdAt: Date
+  user_id: string
+  user_avatar: string
+  user_name: string
 }
 
 export default function Home({ freelas }: HomeProps) {
@@ -51,7 +47,19 @@ export default function Home({ freelas }: HomeProps) {
 
           <Freelas>
             {freelas.map(freela => (
-              <FreelaCard key={freela.id} freela={freela} />
+              <FreelaCard
+                key={freela.id}
+                id={freela.id}
+                title={freela.title}
+                description={freela.description}
+                price={freela.price}
+                deadline={freela.deadline}
+                technologies={freela.technologies}
+                createdAt={freela.createdAt}
+                user_id={freela.user_id}
+                user_avatar={freela.user_avatar}
+                user_name={freela.user_name}
+              />
             ))}
           </Freelas>
         </FreelasContainer>
@@ -61,7 +69,7 @@ export default function Home({ freelas }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await codeFreelas.get('/posts');
+  const response = await codeFreelasApi.get('/freela');
 
   return {
     props: {
