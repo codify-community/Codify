@@ -51,7 +51,7 @@ const sliderAnimationConfig = (slider: KeenSliderInstance) => {
     clearTimeout(timeout)
     if (mouseOver) return
     timeout = setTimeout(() => {
-      slider.next()
+      if (slider.slides.length > 3) slider.next()
     }, 2000)
   }
   slider.on("created", () => {
