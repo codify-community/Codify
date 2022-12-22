@@ -81,6 +81,12 @@ export const Contact = styled('div', {
     top: 0,
     right: 32,
   },
+
+  a: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 })
 
 export const Summary = styled('div', {
