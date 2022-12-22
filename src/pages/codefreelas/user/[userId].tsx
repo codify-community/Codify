@@ -9,7 +9,7 @@ import { Title } from '../../../components/Title'
 import { UserHeader } from '../../../components/codefreelas/UserHeader'
 import { Loading } from '../../../components/Loading'
 
-import { api } from '../../../lib/axios'
+import { codeFreelas } from '../../../lib/axios'
 
 import { Banner, UserContainer, Content, Posts, Header, ActivePostsSection } from '../../../styles/pages/codefreelas/user'
 
@@ -79,7 +79,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<any, { userId: string }> = async ({ params }) => {
   const userId = params?.userId
 
-  const user = await api.get('/users', {
+  const user = await codeFreelas.get('/users', {
     params: {
       id: userId
     }

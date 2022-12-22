@@ -1,5 +1,5 @@
 import Axios from 'axios'
 
-export const api = Axios.create({
-  baseURL: 'http://localhost:3333',
+export const codeFreelas = Axios.create({
+  baseURL: 'http://localhost:7777',
 })

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
 
-import { api } from "../lib/axios";
+import { codeFreelas } from "../lib/axios";
 
 import 'keen-slider/keen-slider.min.css'
 import WaveSvg from "../assets/wave.svg"
@@ -215,9 +215,9 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const details = await api.get('/details')
-  const staffs = await api.get('/staffs')
-  const boosters = await api.get('/boosters')
+  const details = await codeFreelas.get('/details')
+  const staffs = await codeFreelas.get('/staffs')
+  const boosters = await codeFreelas.get('/boosters')
 
   return {
     props: {

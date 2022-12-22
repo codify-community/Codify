@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { api } from '../../../lib/axios'
+import { codeFreelas } from '../../../lib/axios'
 
 import { FreelaHeader } from '../../../components/codefreelas/FreelaHeader'
 import { Freela } from '..'
@@ -75,7 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<any, { freelaId: string }> = async ({ params }) => {
   const freelaId = params?.freelaId
   
-  const freela = await api.get('/posts', {
+  const freela = await codeFreelas.get('/posts', {
     params: {
       id: freelaId
     }

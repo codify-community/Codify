@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-import { api } from "../../lib/axios";
+import { codeFreelas } from "../../lib/axios";
 
 import { FormContainer, Form, Content, FreelasContainer, Freelas } from "../../styles/pages/codefreelas/home";
 
@@ -61,7 +61,7 @@ export default function Home({ freelas }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await api.get('/posts');
+  const response = await codeFreelas.get('/posts');
 
   return {
     props: {
