@@ -12,7 +12,7 @@ interface MemberCardProps {
     avatar: string
     name: string
     ocupation: string
-    description: string
+    bio: string
     github: string
     technologies: string[]
   }
@@ -28,7 +28,7 @@ export function MemberCard({ member }: MemberCardProps) {
         <strong>{member.name}</strong>
         <span>{member.ocupation}</span>
 
-        <p>{member.description}</p>
+        <p>{member.bio}</p>
 
         <a href={member.github} target="_blank" rel="noreferrer">
           <GithubLogo weight="fill" size={42} />

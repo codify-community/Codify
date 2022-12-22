@@ -5,7 +5,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
 
-import { codeFreelasApi } from "../lib/axios";
+import { codeFreelasApi, summaryApi } from "../lib/axios";
 
 import 'keen-slider/keen-slider.min.css'
 import WaveSvg from "../assets/wave.svg"
@@ -161,14 +161,9 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
           </About>
 
           <DetailCards>
-            <DetailCard key="1" title="Membros" value="1000" />
-            <DetailCard key="2" title="Staffs" value="15" />
-            <DetailCard key="3" title="Boosters" value="10" />
-            <DetailCard key="4" title="Data" value="10-10-2022" />
-
-            {/* {details.map(detail => (
+            {details.map(detail => (
               <DetailCard key={detail.id} title={detail.title} value={detail.value} />
-            ))} */}
+            ))}
           </DetailCards>
         </AboutContainer>
 
@@ -176,43 +171,17 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
           <Title text="Staffs" />
           
           <Cards ref={staffSliderRef} className="keen-slider">
-            <MemberCard key="1" member={
-              {
-                id: 1,
-                role: 'owner',
-                avatar: 'https://images-ext-2.discordapp.net/external/4_xnJP40GkSDXodEpYVtfgiRqyp65nNJujXnoXcQQZw/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/696439841529004123/8b38b5c66080f80eb85ba8200b8417c4.png',
-                name: 'Lucas',
-                ocupation: 'Desenvolvedor Fullstack',
-                description: 'Desenvolvedor Fullstack, apaixonado por tecnologia e programação.',
-                github: '',
-                technologies: ['React', 'Node', 'React Native', 'Typescript']
-              }
-            } />
-
-            {/* {staffs.map((member: Member) => (
+            {staffs.map((member: Member) => (
               <MemberCard key={member.id} member={member} />
-            ))} */}
+            ))}
           </Cards>
 
           <Title text="Boosters" />
           
           <Cards ref={boosterSliderRef} className="keen-slider">
-            <MemberCard key="1" member={
-              {
-                id: 1,
-                role: 'owner',
-                avatar: 'https://images-ext-2.discordapp.net/external/4_xnJP40GkSDXodEpYVtfgiRqyp65nNJujXnoXcQQZw/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/696439841529004123/8b38b5c66080f80eb85ba8200b8417c4.png',
-                name: 'Lucas',
-                ocupation: 'Desenvolvedor Fullstack',
-                description: 'Desenvolvedor Fullstack, apaixonado por tecnologia e programação.',
-                github: '',
-                technologies: ['React', 'Node', 'React Native', 'Typescript']
-              }
-            } />
-
-            {/* {boosters.map((member: Member) => (
+            {boosters.map((member: Member) => (
               <MemberCard key={member.id} member={member} />
-            ))} */}
+            ))}
           </Cards>
         </CardSection>
       </Container>
@@ -221,18 +190,13 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const details = await codeFreelas.get('/details')
-  // const staffs = await codeFreelas.get('/staffs')
-  // const boosters = await codeFreelas.get('/boosters')
+  const details = await summaryApi.get('/summary')
 
   return {
     props: {
-      // details: details.data,
-      // staffs: staffs.data,
-      // boosters: boosters.data,
-      details: [],
-      staffs: [],
-      boosters: []
+      details: details.data.details,
+      staffs: details.data.staffs,
+      boosters: details.data.boosters,
     },
     revalidate: 60 * 15 // 15 minutes
   }

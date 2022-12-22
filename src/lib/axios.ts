@@ -4,6 +4,6 @@ export const codeFreelasApi = Axios.create({
   baseURL: 'http://localhost:7777/codify',
 })
 
-// export const resumeApi = Axios.create({
-//   baseURL: 'http://localhost:7777/codify',
-// })
+export const summaryApi = Axios.create({
+  baseURL: 'http://localhost:5000',
+})
