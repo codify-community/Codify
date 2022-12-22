@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 
 import { codeFreelasApi } from "../../lib/axios";
@@ -7,6 +7,7 @@ import { FormContainer, Form, Content, FreelasContainer, Freelas } from "../../s
 
 import { Title } from "../../components/Title";
 import { FreelaCard } from "../../components/FreelaCard";
+import { useState } from "react";
 
 interface HomeProps {
   freelas: ResumeFreela[];
@@ -26,6 +27,21 @@ export interface ResumeFreela {
 }
 
 export default function Home({ freelas }: HomeProps) {
+  const [filter, setFilter] = useState("")
+  const [actualFreelas, setActualFreelas] = useState<ResumeFreela[]>(freelas)
+
+  const results = actualFreelas.length
+  const resultText = results === 1 ? "Resultado" : "Resultados"
+
+  function handleFilter(event: React.ChangeEvent<HTMLInputElement>) {
+    const filteredFreelas = freelas.filter(
+      freela => freela.title.toLowerCase().includes(event.target.value.toLowerCase()) || freela.description.toLowerCase().includes(event.target.value.toLowerCase()) || freela.technologies.join(" ").toLowerCase().includes(event.target.value.toLowerCase())
+    )
+
+    setActualFreelas(filteredFreelas)
+    setFilter(event.target.value);
+  }
+
   return (
     <>
       <Head>
@@ -34,19 +50,19 @@ export default function Home({ freelas }: HomeProps) {
       </Head>
 
       <FormContainer>
-        <Form>
+        <Form onSubmit={e => { e.preventDefault(); }}>
           <h1>Code Freelas</h1>
           <p>Encontre freelancers para desenvolver seu projeto e encontre projetos para trabalhar.</p>
-          <input type="text" spellCheck={false} placeholder="Digite as palavras chave" />
+          <input type="text" value={filter} onChange={handleFilter} spellCheck={false} placeholder="Digite as palavras chave" />
         </Form>
       </FormContainer>
 
       <Content>
         <FreelasContainer>
-          <Title text="400 Resultados" />
+          <Title text={`${results} ${resultText}`} />
 
           <Freelas>
-            {freelas.map(freela => (
+            {actualFreelas.map(freela => (
               <FreelaCard
                 key={freela.id}
                 id={freela.id}
@@ -68,13 +84,12 @@ export default function Home({ freelas }: HomeProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = await codeFreelasApi.get('/freela');
 
   return {
     props: {
       freelas: response.data
-    },
-    revalidate: 60 * 15 // 15 minutes
+    }
   }
 }

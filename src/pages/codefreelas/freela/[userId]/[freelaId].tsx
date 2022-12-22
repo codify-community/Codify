@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { codeFreelasApi } from '../../../../lib/axios'
 
@@ -58,14 +58,7 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true
-  }
-}
-
-export const getStaticProps: GetStaticProps<any, { userId: string, freelaId: string }> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<any, { userId: string, freelaId: string }> = async ({ params }) => {
   const userId = params?.userId
   const freelaId = params?.freelaId
   
@@ -76,7 +69,6 @@ export const getStaticProps: GetStaticProps<any, { userId: string, freelaId: str
       freela: {
         ...freela.data,
       }
-    },
-    revalidate: 60 * 60 * 1 // 1 hour
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -18,7 +18,7 @@ interface UserProps {
 }
 
 export interface User {
-  id: string
+  _id: string
   name: string
   banner_url: string
   avatar_url: string
@@ -67,7 +67,7 @@ export default function UserPage({ user }: UserProps) {
                   deadline={freela.deadline}
                   technologies={freela.technologies}
                   createdAt={freela.createdAt}
-                  user_id={user.id}
+                  user_id={user._id}
                   user_avatar={user.avatar_url}
                   user_name={user.name}
                 />
@@ -80,14 +80,7 @@ export default function UserPage({ user }: UserProps) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true
-  }
-}
-
-export const getStaticProps: GetStaticProps<any, { userId: string }> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<any, { userId: string }> = async ({ params }) => {
   const userId = params?.userId
 
   const user = await codeFreelasApi.get(`/${userId}`)
