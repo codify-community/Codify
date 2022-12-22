@@ -24,7 +24,7 @@ export function UserHeader({ user }: UserHeaderProps) {
             <h2>{user.name}</h2>
 
             <Contact>
-              <a href={`https://discordapp.com/users/${user.id}`} target="_blank" rel="noreferrer">
+              <a href={`https://discordapp.com/users/${user._id}`} target="_blank" rel="noreferrer">
                 <DiscordLogo weight="fill" size={32} color={theme.colors.blue500.value} />
               </a>
               {user.whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
