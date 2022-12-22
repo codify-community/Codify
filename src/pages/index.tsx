@@ -82,13 +82,13 @@ interface Details {
   value: string
 }
 
-interface Member {
+export interface Member {
   id: number
   role: 'mod' | 'admin' | 'owner' | 'booster'
   avatar: string
   name: string
   ocupation: string
-  description: string
+  bio: string
   github: string
   technologies: string[]
 }

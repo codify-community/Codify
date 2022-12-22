@@ -102,6 +102,8 @@ export const Info = styled('div', {
 
     color: '$white',
 
+    marginBottom: '2rem',
+
     '&:hover': {
       transition: 'all 0.3s ease-in-out',
       backgroundColor: '$white',
@@ -117,7 +119,7 @@ export const SkillsContainer = styled('div', {
   width: '100%',
   height: '6.375rem',
 
-  marginTop: '2rem',
+  marginTop: 'auto',
   padding: '0.5rem 2.375rem',
 
   borderBottomRightRadius: 8,

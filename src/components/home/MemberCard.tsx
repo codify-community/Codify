@@ -3,19 +3,12 @@ import Image from "next/image";
 import { GithubLogo } from "phosphor-react";
 import { MemberCardContainer, Info, Skills, Role, SkillsContainer } from "../../styles/components/home/MemberCard";
 
+import { Member } from "../../pages";
+
 import { Tag } from "../Tag";
 
 interface MemberCardProps {
-  member: {
-    id: number
-    role: 'mod' | 'admin' | 'owner' | 'booster'
-    avatar: string
-    name: string
-    ocupation: string
-    bio: string
-    github: string
-    technologies: string[]
-  }
+  member: Member
 }
 
 export function MemberCard({ member }: MemberCardProps) {
