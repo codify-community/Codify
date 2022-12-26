@@ -1,13 +1,10 @@
 import Image from "next/image"
 
-import { formatDistanceToNow } from "date-fns";
-
 import { DiscordLogo, InstagramLogo, Package, PaperPlaneTilt, WhatsappLogo } from "phosphor-react"
 import { User } from "../../pages/codefreelas/user/[userId]"
 import { theme } from "../../styles"
 
 import { Contact, Summary, UserHeaderContainer, UserInformation, Details } from "../../styles/components/codefreelas/UserHeader"
-import { ptBR } from "date-fns/locale";
 
 interface UserHeaderProps {
   user: User

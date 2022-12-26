@@ -5,7 +5,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
 
-import { codeFreelasApi, summaryApi } from "../lib/axios";
+import { summaryApi } from "../lib/axios";
 
 import 'keen-slider/keen-slider.min.css'
 import WaveSvg from "../assets/wave.svg"
@@ -163,7 +163,7 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
           <DetailCards>
             {details.map(detail => (
               console.log(detail),
-              <DetailCard key={detail.id} title={detail.title} value={detail.value} />
+              <DetailCard key={detail.title} title={detail.title} value={detail.value} />
             ))}
           </DetailCards>
         </AboutContainer>

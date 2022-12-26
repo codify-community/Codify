@@ -19,7 +19,7 @@ export function MemberCard({ member }: MemberCardProps) {
       <Info>
         <Image src={member.avatar} alt="" width={100} height={100} />
         <strong>{member.name}</strong>
-        <span>{member.ocupation}</span>
+        <span>{member.occupation}</span>
 
         <p>{member.bio}</p>
 
