@@ -80,13 +80,19 @@ export default function UserPage({ user }: UserProps) {
 export const getServerSideProps: GetServerSideProps<any, { userId: string }> = async ({ params }) => {
   const userId = params?.userId
 
-  const user = await codeFreelasApi.get(`/${userId}`)
+  try {
+    const user = await codeFreelasApi.get(`/${userId}`)
 
-  return {
-    props: {
-      user: {
-        ...user.data
+    return {
+      props: {
+        freela: {
+          ...user.data
+        }
       }
+    }
+  } catch (err) {
+    return { 
+      notFound: true 
     }
   }
 }

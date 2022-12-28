@@ -64,13 +64,19 @@ export const getServerSideProps: GetServerSideProps<any, { userId: string, freel
   const userId = params?.userId
   const freelaId = params?.freelaId
   
-  const freela = await codeFreelasApi.get(`/${userId}/${freelaId}`)
+  try {
+    const freela = await codeFreelasApi.get(`/${userId}/${freelaId}`)
 
-  return {
-    props: {
-      freela: {
-        ...freela.data,
+    return {
+      props: {
+        freela: {
+          ...freela.data,
+        }
       }
+    }
+  } catch (err) {
+    return { 
+      notFound: true 
     }
   }
 }

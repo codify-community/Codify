@@ -162,7 +162,7 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
 
           <DetailCards>
             {details.map(detail => (
-              console.log(detail),
+
               <DetailCard key={detail.title} title={detail.title} value={detail.value} />
             ))}
           </DetailCards>
