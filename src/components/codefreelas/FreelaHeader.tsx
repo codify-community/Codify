@@ -38,7 +38,7 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
             {freela.user_whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
               <WhatsappLogo weight="fill" size={33} color={theme.colors.green400.value} />
             </a>}
-            {freela.user_whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
+            {freela.user_instagram && <a href="https://google.com" target="_blank" rel="noreferrer">
               <InstagramLogo weight="fill" size={33} color={theme.colors.yellow500.value} />
             </a>}
           </Contact>

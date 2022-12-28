@@ -26,6 +26,8 @@ export interface Freela {
   user_id: string
   user_avatar: string
   user_name: string
+  user_whatsapp: string
+  user_instagram: string
 }
 
 export default function FreelaPage({ freela }: FreelaPageProps) {
@@ -63,7 +65,7 @@ export const getServerSideProps: GetServerSideProps<any, { userId: string, freel
   const freelaId = params?.freelaId
   
   const freela = await codeFreelasApi.get(`/${userId}/${freelaId}`)
-  
+
   return {
     props: {
       freela: {

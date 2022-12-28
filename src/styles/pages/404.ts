@@ -1,6 +1,6 @@
 import { styled } from "..";
 
-export const Container = styled("div", {
+export const Error404Container = styled("div", {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

@@ -6,7 +6,7 @@ import { Title } from "./Title";
 export function Loading() {
   return (
     <LoadingContainer>
-      <Title text="Aguarde um momento enquanto carregamos tudo" />
+      <Title text="Aguarde um momento" />
     </LoadingContainer>
   )
 }
