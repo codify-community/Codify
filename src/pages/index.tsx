@@ -87,7 +87,7 @@ export interface Member {
   role: 'mod' | 'admin' | 'owner' | 'booster'
   avatar: string
   name: string
-  ocupation: string
+  occupation: string
   bio: string
   github: string
   technologies: string[]
