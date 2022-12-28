@@ -34,6 +34,7 @@ export const Content = styled('div', {
 
 export const ActivePostsSection = styled('section', {
   margin: '0 auto',
+  paddingBottom: '5.625rem',
     
   maxWidth: 1440,
   width: '100%',
@@ -44,8 +45,6 @@ export const Posts = styled('div', {
   gridTemplateColumns: 'repeat(2, 1fr)',
 
   gap: '4rem 2rem',
-
-  paddingBottom: '5.625rem',
 
   '@media (max-width: 800px)': {
     gridTemplateColumns: '1fr',

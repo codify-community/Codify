@@ -12,6 +12,7 @@ import { Loading } from '../../../components/Loading'
 import { codeFreelasApi } from '../../../lib/axios'
 
 import { Banner, UserContainer, Content, Posts, Header, ActivePostsSection } from '../../../styles/pages/codefreelas/user'
+import { NoResultsFound } from '../../../components/NoResultsFound'
 
 interface UserProps {
   user: User
@@ -54,25 +55,21 @@ export default function UserPage({ user }: UserProps) {
 
         <Content>
           <ActivePostsSection>
-            <Title text='Posts ativos' />
-
-            <Posts>
-              {user.freelas.map(freela => (
-                <FreelaCard
-                  key={freela.id}
-                  id={freela.id}
-                  title={freela.title}
-                  description={freela.description}
-                  price={freela.price}
-                  deadline={freela.deadline}
-                  technologies={freela.technologies}
-                  createdAt={freela.createdAt}
-                  user_id={user._id}
-                  user_avatar={user.avatar_url}
-                  user_name={user.name}
-                />
-              ))}
-            </Posts>
+            {
+              user.freelas.length === 0 ?
+              (<NoResultsFound />)
+              :
+              (
+                <>
+                  <Title text='Posts ativos' />
+                  <Posts>
+                    {user.freelas.map(freela => (
+                      <FreelaCard key={freela.id} freela={freela} />
+                    ))}
+                  </Posts>
+                </>
+              )
+            }
           </ActivePostsSection>
         </Content>
       </UserContainer>

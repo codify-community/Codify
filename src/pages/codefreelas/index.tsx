@@ -8,6 +8,7 @@ import { FormContainer, Form, Content, FreelasContainer, Freelas } from "../../s
 import { Title } from "../../components/Title";
 import { FreelaCard } from "../../components/FreelaCard";
 import { useState } from "react";
+import { NoResultsFound } from "../../components/NoResultsFound";
 
 interface HomeProps {
   freelas: ResumeFreela[];
@@ -59,25 +60,21 @@ export default function Home({ freelas }: HomeProps) {
 
       <Content>
         <FreelasContainer>
-          <Title text={`${results} ${resultText}`} />
-
-          <Freelas>
-            {actualFreelas.map(freela => (
-              <FreelaCard
-                key={freela.id}
-                id={freela.id}
-                title={freela.title}
-                description={freela.description}
-                price={freela.price}
-                deadline={freela.deadline}
-                technologies={freela.technologies}
-                createdAt={freela.createdAt}
-                user_id={freela.user_id}
-                user_avatar={freela.user_avatar}
-                user_name={freela.user_name}
-              />
-            ))}
-          </Freelas>
+          {
+            results === 0 ?
+              (<NoResultsFound />)
+              :
+              (
+                <>
+                  <Title text={`${results} ${resultText}`} />
+                  <Freelas>
+                    {actualFreelas.map(freela => (
+                      <FreelaCard key={freela.id} freela={freela} />
+                    ))}
+                  </Freelas>
+                </>
+              )
+          }
         </FreelasContainer>
       </Content>
     </>
