@@ -1,15 +1,20 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
+import { GetServerSideProps } from 'next'
 import { codeFreelasApi } from '../../../../lib/axios'
 
 import { FreelaHeader } from '../../../../components/codefreelas/FreelaHeader'
-import { Loading } from '../../../../components/Loading'
 
 import { FreelaContainer, Header, Content } from '../../../../styles/pages/codefreelas/freela'
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+
+
 import Head from 'next/head'
+import rehypeRaw from 'rehype-raw'
+import remarkBreaks from 'remark-breaks'
+import remarkGithub from 'remark-github'
+import remarkHtml from 'remark-html'
+import remarkRehype from 'remark-rehype'
 
 interface FreelaPageProps {
   freela: Freela
@@ -46,7 +51,12 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
         
         <Content>
           <div>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{freela.description}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className='markdown'
+            >
+              {freela.description}
+            </ReactMarkdown>
           </div>
         </Content>
       </FreelaContainer>

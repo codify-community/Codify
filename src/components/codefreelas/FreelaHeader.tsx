@@ -21,6 +21,8 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
     addSuffix: true,
   })
 
+  console.log(freela)
+
   return (
     <FreelaHeaderContainer>
       <Header>

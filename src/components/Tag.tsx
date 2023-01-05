@@ -6,6 +6,6 @@ interface TechnologyProps {
 
 export function Tag({ name }: TechnologyProps) {
   return (
-    <TagContainer>{name}</TagContainer>
+    <TagContainer>{name.toLowerCase()}</TagContainer>
   )
 }

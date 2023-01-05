@@ -40,5 +40,7 @@ export const Content = styled('div', {
     padding: '2.5rem 2rem',
 
     margin: '0 auto',
+
+    whiteSpace: 'pre-wrap',
   }
 })
