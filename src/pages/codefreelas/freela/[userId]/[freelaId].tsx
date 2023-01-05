@@ -31,12 +31,6 @@ export interface Freela {
 }
 
 export default function FreelaPage({ freela }: FreelaPageProps) {
-  const { isFallback } = useRouter()
-
-  if (isFallback) {
-    return <Loading />
-  }
-
   return (
     <>
       <Head>

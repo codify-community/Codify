@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
 
   images: {
-    domains: ['i.imgur.com', 'images-ext-1.discordapp.net', 'images-ext-2.discordapp.net', 'cdn.discordapp.com'],
+    domains: ['i.imgur.com', 'cdn.discordapp.com'],
   },
 }
 

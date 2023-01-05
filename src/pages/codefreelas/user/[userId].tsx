@@ -13,6 +13,7 @@ import { codeFreelasApi } from '../../../lib/axios'
 
 import { Banner, UserContainer, Content, Posts, Header, ActivePostsSection } from '../../../styles/pages/codefreelas/user'
 import { NoResultsFound } from '../../../components/NoResultsFound'
+import { useState } from 'react'
 
 interface UserProps {
   user: User
@@ -32,11 +33,7 @@ export interface User {
 }
 
 export default function UserPage({ user }: UserProps) {
-  const { isFallback } = useRouter()
-
-  if (isFallback) {
-    return <Loading />
-  }
+  const [banner, setBanner] = useState(user.banner_url)
 
   return (
     <>
@@ -47,7 +44,13 @@ export default function UserPage({ user }: UserProps) {
 
       <UserContainer>
         <Banner>
-          <Image src={user.banner_url} alt="" width={1660} height={533} />
+          <Image
+            src={banner}
+            alt=""
+            width={1660}
+            height={533}
+            onError={() => setBanner('https://i.imgur.com/KvPsXMF.jpg')}
+          />
           <Header>
             <UserHeader user={user} />
           </Header>
@@ -64,7 +67,7 @@ export default function UserPage({ user }: UserProps) {
                   <Title text='Posts ativos' />
                   <Posts>
                     {user.freelas.map(freela => (
-                      <FreelaCard key={freela.id} freela={freela} />
+                      <FreelaCard key={freela.id} freela={freela}/>
                     ))}
                   </Posts>
                 </>
@@ -85,7 +88,7 @@ export const getServerSideProps: GetServerSideProps<any, { userId: string }> = a
 
     return {
       props: {
-        freela: {
+        user: {
           ...user.data
         }
       }
