@@ -75,6 +75,8 @@ export const Content = styled('div', {
     color: '$gray400',
 
     padding: '1.25rem 0',
+
+    wordBreak: 'break-word',
   },
 
   strong: {

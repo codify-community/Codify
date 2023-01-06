@@ -67,7 +67,15 @@ export default function UserPage({ user }: UserProps) {
                   <Title text='Posts ativos' />
                   <Posts>
                     {user.freelas.map(freela => (
-                      <FreelaCard key={freela.id} freela={freela}/>
+                      <FreelaCard
+                        key={freela.id}
+                        freela={{
+                          ...freela,
+                          user_id: user._id,
+                          user_avatar: user.avatar_url,
+                          user_name: user.name,
+                        }}
+                      />
                     ))}
                   </Posts>
                 </>
