@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "json-server --watch server.json -p 3333",
     "lint": "next lint"
   },
   "dependencies": {
