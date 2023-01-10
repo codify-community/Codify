@@ -8,13 +8,7 @@ import { FreelaContainer, Header, Content } from '../../../../styles/pages/codef
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-
 import Head from 'next/head'
-import rehypeRaw from 'rehype-raw'
-import remarkBreaks from 'remark-breaks'
-import remarkGithub from 'remark-github'
-import remarkHtml from 'remark-html'
-import remarkRehype from 'remark-rehype'
 
 interface FreelaPageProps {
   freela: Freela

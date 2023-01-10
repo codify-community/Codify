@@ -1,10 +1,11 @@
 import Image from "next/image"
 
-import { DiscordLogo, InstagramLogo, Package, PaperPlaneTilt, WhatsappLogo } from "phosphor-react"
+import { Package, PaperPlaneTilt } from "phosphor-react"
 import { User } from "../../pages/codefreelas/user/[userId]"
 import { theme } from "../../styles"
 
-import { Contact, Summary, UserHeaderContainer, UserInformation, Details } from "../../styles/components/codefreelas/UserHeader"
+import { Summary, UserHeaderContainer, UserInformation, Details } from "../../styles/components/codefreelas/UserHeader"
+import { Contact } from "../Contact"
 
 interface UserHeaderProps {
   user: User
@@ -19,18 +20,7 @@ export function UserHeader({ user }: UserHeaderProps) {
         <Details>
           <div>
             <h2>{user.name}</h2>
-
-            <Contact>
-              <a href={`https://discordapp.com/users/${user._id}`} target="_blank" rel="noreferrer">
-                <DiscordLogo weight="fill" size={32} color={theme.colors.blue500.value} />
-              </a>
-              {user.whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
-                <WhatsappLogo weight="fill" size={32} color={theme.colors.green400.value} />
-              </a>}
-              {user.instagram && <a href="https://google.com" target="_blank" rel="noreferrer">
-                <InstagramLogo weight="fill" size={32} color={theme.colors.yellow500.value} />
-              </a>}
-            </Contact>
+            <Contact discord={user._id} whatsapp={user.whatsapp} instagram={user.instagram} />
           </div>
 
           <p>{user.description}</p>

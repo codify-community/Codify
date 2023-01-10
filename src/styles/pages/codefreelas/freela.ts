@@ -42,5 +42,6 @@ export const Content = styled('div', {
     margin: '0 auto',
 
     whiteSpace: 'pre-wrap',
+    wordBreak: 'break-word',
   }
 })

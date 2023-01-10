@@ -55,17 +55,6 @@ export const Details = styled('div', {
   },
 })
 
-export const Contact = styled('div', {
-  display: 'flex',
-  gap: '0.75rem',
-
-  a: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-})
-
 export const Summary = styled('div', {
   display: 'flex',
   alignItems: 'center',

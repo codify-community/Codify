@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 
 import { GithubLogo } from "phosphor-react";
 import { MemberCardContainer, Info, Skills, Role, SkillsContainer } from "../../styles/components/home/MemberCard";
@@ -17,7 +18,12 @@ export function MemberCard({ member }: MemberCardProps) {
       <Role role={member.role}>{member.role.toUpperCase()}</Role>
 
       <Info>
-        <Image src={member.avatar} alt="" width={100} height={100} />
+        <Image
+          src={member.avatar || "https://cdn.discordapp.com/embed/avatars/0.png"}
+          alt=""
+          width={100}
+          height={100}
+        />
         <strong>{member.name}</strong>
         <span>{member.occupation}</span>
 

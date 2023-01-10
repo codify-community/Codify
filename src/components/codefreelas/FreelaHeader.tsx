@@ -3,13 +3,14 @@ import Image from "next/image"
 import { formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale"
 
-import { Clock, CurrencyDollar, DiscordLogo, InstagramLogo, WhatsappLogo } from "phosphor-react"
+import { Clock, CurrencyDollar } from "phosphor-react"
 
-import { Author, FreelaHeaderContainer, Profile, Header, Tags, Info, FreelaHeaderLink, Contact } from "../../styles/components/codefreelas/FreelaHeader"
+import { Author, FreelaHeaderContainer, Profile, Header, Tags, Info, FreelaHeaderLink } from "../../styles/components/codefreelas/FreelaHeader"
 import { theme } from "../../styles"
 
 import { Freela } from "../../pages/codefreelas/freela/[userId]/[freelaId]";
 import { Tag } from "../Tag"
+import { Contact } from "../Contact"
 
 interface FreelaHeaderProps {
   freela: Freela
@@ -21,8 +22,6 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
     addSuffix: true,
   })
 
-  console.log(freela)
-
   return (
     <FreelaHeaderContainer>
       <Header>
@@ -33,17 +32,7 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
               <strong>{freela.user_name}</strong>
             </Profile>
           </FreelaHeaderLink>
-          <Contact>
-            <a href={`https://discordapp.com/users/${freela.user_id}`} target="_blank" rel="noreferrer">
-              <DiscordLogo weight="fill" size={33} color={theme.colors.blue500.value} />
-            </a>
-            {freela.user_whatsapp && <a href="https://google.com" target="_blank" rel="noreferrer">
-              <WhatsappLogo weight="fill" size={33} color={theme.colors.green400.value} />
-            </a>}
-            {freela.user_instagram && <a href="https://google.com" target="_blank" rel="noreferrer">
-              <InstagramLogo weight="fill" size={33} color={theme.colors.yellow500.value} />
-            </a>}
-          </Contact>
+          <Contact discord={freela.user_id} whatsapp={freela.user_whatsapp} instagram={freela.user_instagram} />
         </Author>
         <time dateTime={new Date(freela.createdAt).toISOString()}>{FormattedDate}</time>
       </Header>

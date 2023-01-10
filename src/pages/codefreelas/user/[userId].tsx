@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router'
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -7,7 +6,6 @@ import { ResumeFreela } from '..'
 import { FreelaCard } from '../../../components/FreelaCard'
 import { Title } from '../../../components/Title'
 import { UserHeader } from '../../../components/codefreelas/UserHeader'
-import { Loading } from '../../../components/Loading'
 
 import { codeFreelasApi } from '../../../lib/axios'
 
@@ -45,7 +43,7 @@ export default function UserPage({ user }: UserProps) {
       <UserContainer>
         <Banner>
           <Image
-            src={banner}
+            src={banner || 'https://i.imgur.com/KvPsXMF.jpg'}
             alt=""
             width={1660}
             height={533}

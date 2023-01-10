@@ -79,11 +79,6 @@ export const Profile = styled('div', {
   }
 })
 
-export const Contact = styled('div', {
-  display: 'flex',
-  gap: '0.75rem',
-})
-
 export const Tags = styled('div', {
   display: 'flex',
   gap: 6,
