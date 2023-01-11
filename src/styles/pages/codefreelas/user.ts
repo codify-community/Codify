@@ -1,4 +1,4 @@
-import { styled } from "../..";
+import { styled } from '../..'
 
 export const UserContainer = styled('div', {})
 
@@ -17,7 +17,7 @@ export const Banner = styled('header', {
 
 export const Header = styled('div', {
   display: 'flex',
-  
+
   margin: '0 auto',
   marginTop: -110,
 
@@ -35,7 +35,7 @@ export const Content = styled('div', {
 export const ActivePostsSection = styled('section', {
   margin: '0 auto',
   paddingBottom: '5.625rem',
-    
+
   maxWidth: 1440,
   width: '100%',
 })
@@ -48,5 +48,5 @@ export const Posts = styled('div', {
 
   '@media (max-width: 800px)': {
     gridTemplateColumns: '1fr',
-  }
+  },
 })

@@ -1,8 +1,8 @@
-import { DetailCardContainer } from "../../styles/components/home/DetailCard";
+import { DetailCardContainer } from '../../styles/components/home/DetailCard'
 
 interface DetailCardProps {
-  title: string;
-  value: string;
+  title: string
+  value: string
 }
 
 export function DetailCard({ title, value }: DetailCardProps) {
@@ -11,5 +11,5 @@ export function DetailCard({ title, value }: DetailCardProps) {
       <strong>{value}</strong>
       <p>{title}</p>
     </DetailCardContainer>
-  );
+  )
 }

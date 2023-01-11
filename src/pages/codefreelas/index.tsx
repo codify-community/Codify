@@ -1,18 +1,21 @@
-import { GetServerSideProps, GetStaticProps } from "next";
-import Head from "next/head";
+import Head from 'next/head'
+import { GetServerSideProps } from 'next'
 
-import { codeFreelasApi } from "../../lib/axios";
+import React, { useState } from 'react'
 
-import { FormContainer, Form, Content, FreelasContainer, Freelas } from "../../styles/pages/codefreelas/home";
+import { codeFreelasApi } from '../../lib/axios'
 
-import { Title } from "../../components/Title";
-import { FreelaCard } from "../../components/FreelaCard";
-import { useState } from "react";
-import { NoResultsFound } from "../../components/NoResultsFound";
+import {
+  FormContainer,
+  Form,
+  Content,
+  FreelasContainer,
+  Freelas,
+} from '../../styles/pages/codefreelas/home'
 
-interface HomeProps {
-  freelas: ResumeFreela[];
-}
+import { Title } from '../../components/Title'
+import { FreelaCard } from '../../components/FreelaCard'
+import { NoResultsFound } from '../../components/NoResultsFound'
 
 export interface ResumeFreela {
   id: number
@@ -27,20 +30,32 @@ export interface ResumeFreela {
   user_name: string
 }
 
+interface HomeProps {
+  freelas: ResumeFreela[]
+}
+
 export default function Home({ freelas }: HomeProps) {
-  const [filter, setFilter] = useState("")
+  const [filter, setFilter] = useState('')
   const [actualFreelas, setActualFreelas] = useState<ResumeFreela[]>(freelas)
 
   const results = actualFreelas.length
-  const resultText = results === 1 ? "Resultado" : "Resultados"
+  const resultText = results === 1 ? 'Resultado' : 'Resultados'
 
   function handleFilter(event: React.ChangeEvent<HTMLInputElement>) {
     const filteredFreelas = freelas.filter(
-      freela => freela.title.toLowerCase().includes(event.target.value.toLowerCase()) || freela.description.toLowerCase().includes(event.target.value.toLowerCase()) || freela.technologies.join(" ").toLowerCase().includes(event.target.value.toLowerCase())
+      (freela) =>
+        freela.title.toLowerCase().includes(event.target.value.toLowerCase()) ||
+        freela.description
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase()) ||
+        freela.technologies
+          .join(' ')
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase()),
     )
 
     setActualFreelas(filteredFreelas)
-    setFilter(event.target.value);
+    setFilter(event.target.value)
   }
 
   return (
@@ -51,30 +66,40 @@ export default function Home({ freelas }: HomeProps) {
       </Head>
 
       <FormContainer>
-        <Form onSubmit={e => { e.preventDefault(); }}>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault()
+          }}
+        >
           <h1>Code Freelas</h1>
-          <p>Encontre freelancers para desenvolver seu projeto e encontre projetos para trabalhar.</p>
-          <input type="text" value={filter} onChange={handleFilter} spellCheck={false} placeholder="Digite as palavras chave" />
+          <p>
+            Encontre freelancers para desenvolver seu projeto e encontre
+            projetos para trabalhar.
+          </p>
+          <input
+            type="text"
+            value={filter}
+            onChange={handleFilter}
+            spellCheck={false}
+            placeholder="Digite as palavras chave"
+          />
         </Form>
       </FormContainer>
 
       <Content>
         <FreelasContainer>
-          {
-            results === 0 ?
-              (<NoResultsFound />)
-              :
-              (
-                <>
-                  <Title text={`${results} ${resultText}`} />
-                  <Freelas>
-                    {actualFreelas.map(freela => (
-                      <FreelaCard key={freela.id} freela={freela} />
-                    ))}
-                  </Freelas>
-                </>
-              )
-          }
+          {results === 0 ? (
+            <NoResultsFound />
+          ) : (
+            <>
+              <Title text={`${results} ${resultText}`} />
+              <Freelas>
+                {actualFreelas.map((freela) => (
+                  <FreelaCard key={freela.id} freela={freela} />
+                ))}
+              </Freelas>
+            </>
+          )}
         </FreelasContainer>
       </Content>
     </>
@@ -82,11 +107,11 @@ export default function Home({ freelas }: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await codeFreelasApi.get('/freela');
+  const response = await codeFreelasApi.get('/freela')
 
   return {
     props: {
-      freelas: response.data
-    }
+      freelas: response.data,
+    },
   }
 }

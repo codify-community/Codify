@@ -1,5 +1,5 @@
-import { styled } from "..";
-import Link from "next/link";
+import { styled } from '..'
+import Link from 'next/link'
 
 export const FreelaLink = styled(Link, {
   textDecoration: 'none',
@@ -26,7 +26,7 @@ export const FreelaCardContainer = styled('div', {
   '&:hover': {
     backgroundColor: '$purpleCodify700',
     outline: '$gray400 solid 2px',
-  }
+  },
 })
 
 export const Header = styled('header', {
@@ -40,7 +40,7 @@ export const Header = styled('header', {
     alignItems: 'center',
 
     gap: 6,
-    
+
     img: {
       borderRadius: '50%',
     },
@@ -48,7 +48,7 @@ export const Header = styled('header', {
     p: {
       fontWeight: 'bold',
       lineHeight: '160%',
-    }
+    },
   },
 
   time: {
@@ -56,7 +56,7 @@ export const Header = styled('header', {
     fontSize: '0.875rem',
     lineHeight: '160%',
     color: '$gray400',
-  }
+  },
 })
 
 export const Content = styled('div', {
@@ -84,7 +84,7 @@ export const Content = styled('div', {
     fontSize: '1.25rem',
     lineHeight: '120%',
     color: '$gray200',
-  }
+  },
 })
 
 export const Tags = styled('div', {

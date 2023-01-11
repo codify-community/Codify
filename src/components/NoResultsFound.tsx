@@ -1,8 +1,8 @@
-import Image from "next/image"
+import Image from 'next/image'
 
-import { NoResultsFoundContainer } from "../styles/components/NoResultsFound"
+import { NoResultsFoundContainer } from '../styles/components/NoResultsFound'
 
-import Emoji1 from "../assets/Emoji1.png"
+import Emoji1 from '../assets/Emoji1.png'
 
 export function NoResultsFound() {
   return (

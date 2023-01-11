@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { styled } from "../..";
+import Link from 'next/link'
+import { styled } from '../..'
 
 export const FreelaHeaderLink = styled(Link, {
   textDecoration: 'none',
@@ -20,7 +20,7 @@ export const FreelaHeaderContainer = styled('div', {
   h2: {
     fontSize: '1.5rem',
     lineHeight: '120%',
-  }
+  },
 })
 
 export const Header = styled('header', {
@@ -36,7 +36,7 @@ export const Header = styled('header', {
     fontSize: '0.875rem',
     lineHeight: '160%',
     color: '$gray400',
-  }
+  },
 })
 
 export const Author = styled('div', {
@@ -48,7 +48,7 @@ export const Author = styled('div', {
   a: {
     display: 'flex',
     alignItems: 'center',
-  }
+  },
 })
 
 export const Profile = styled('div', {
@@ -76,7 +76,7 @@ export const Profile = styled('div', {
 
   '&:hover': {
     backgroundColor: '$purpleCodify900',
-  }
+  },
 })
 
 export const Tags = styled('div', {

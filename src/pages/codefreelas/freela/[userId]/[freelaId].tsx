@@ -3,16 +3,16 @@ import { codeFreelasApi } from '../../../../lib/axios'
 
 import { FreelaHeader } from '../../../../components/codefreelas/FreelaHeader'
 
-import { FreelaContainer, Header, Content } from '../../../../styles/pages/codefreelas/freela'
+import {
+  FreelaContainer,
+  Header,
+  Content,
+} from '../../../../styles/pages/codefreelas/freela'
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 import Head from 'next/head'
-
-interface FreelaPageProps {
-  freela: Freela
-}
 
 export interface Freela {
   id: number
@@ -29,6 +29,10 @@ export interface Freela {
   user_instagram: string
 }
 
+interface FreelaPageProps {
+  freela: Freela
+}
+
 export default function FreelaPage({ freela }: FreelaPageProps) {
   return (
     <>
@@ -42,13 +46,10 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
           <h1>Code Freelas</h1>
           <FreelaHeader freela={freela} />
         </Header>
-        
+
         <Content>
           <div>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              className='markdown'
-            >
+            <ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown">
               {freela.description}
             </ReactMarkdown>
           </div>
@@ -58,10 +59,13 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps<any, { userId: string, freelaId: string }> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<
+  any,
+  { userId: string; freelaId: string }
+> = async ({ params }) => {
   const userId = params?.userId
   const freelaId = params?.freelaId
-  
+
   try {
     const freela = await codeFreelasApi.get(`/${userId}/${freelaId}`)
 
@@ -69,12 +73,12 @@ export const getServerSideProps: GetServerSideProps<any, { userId: string, freel
       props: {
         freela: {
           ...freela.data,
-        }
-      }
+        },
+      },
     }
   } catch (err) {
-    return { 
-      notFound: true 
+    return {
+      notFound: true,
     }
   }
 }

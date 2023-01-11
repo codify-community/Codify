@@ -1,4 +1,4 @@
-import { styled } from "../..";
+import { styled } from '../..'
 
 export const DetailCardContainer = styled('div', {
   display: 'flex',
@@ -16,7 +16,7 @@ export const DetailCardContainer = styled('div', {
 
   padding: '3.75rem 0',
   gap: '1.75rem',
-  
+
   height: '100%',
 
   strong: {
@@ -33,5 +33,5 @@ export const DetailCardContainer = styled('div', {
   '&:hover': {
     backgroundColor: '$purpleCodify900B',
     transform: 'translateY(-0.5rem)',
-  }
+  },
 })

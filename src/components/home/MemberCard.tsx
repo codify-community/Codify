@@ -1,12 +1,17 @@
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image'
 
-import { GithubLogo } from "phosphor-react";
-import { MemberCardContainer, Info, Skills, Role, SkillsContainer } from "../../styles/components/home/MemberCard";
+import { GithubLogo } from 'phosphor-react'
+import {
+  MemberCardContainer,
+  Info,
+  Skills,
+  Role,
+  SkillsContainer,
+} from '../../styles/components/home/MemberCard'
 
-import { Member } from "../../pages";
+import { Member } from '../../pages'
 
-import { Tag } from "../Tag";
+import { Tag } from '../Tag'
 
 interface MemberCardProps {
   member: Member
@@ -19,7 +24,9 @@ export function MemberCard({ member }: MemberCardProps) {
 
       <Info>
         <Image
-          src={member.avatar || "https://cdn.discordapp.com/embed/avatars/0.png"}
+          src={
+            member.avatar || 'https://cdn.discordapp.com/embed/avatars/0.png'
+          }
           alt=""
           width={100}
           height={100}
@@ -36,9 +43,9 @@ export function MemberCard({ member }: MemberCardProps) {
 
       <SkillsContainer>
         <p>Habilidades</p>
-        
+
         <Skills>
-          {member.technologies.map(technology => (
+          {member.technologies.map((technology) => (
             <Tag key={technology} name={technology} />
           ))}
         </Skills>

@@ -1,4 +1,4 @@
-import { styled } from "../..";
+import { styled } from '../..'
 
 export const FreelaContainer = styled('div')
 
@@ -16,7 +16,7 @@ export const Header = styled('header', {
 
   h1: {
     textAlign: 'center',
-    
+
     fontWeight: 700,
     lineHeight: '130%',
     fontSize: '6rem',
@@ -43,5 +43,5 @@ export const Content = styled('div', {
 
     whiteSpace: 'pre-wrap',
     wordBreak: 'break-word',
-  }
+  },
 })

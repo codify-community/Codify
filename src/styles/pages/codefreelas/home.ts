@@ -1,4 +1,4 @@
-import { styled } from "../..";
+import { styled } from '../..'
 
 export const FormContainer = styled('div', {
   padding: '0 1rem',
@@ -17,7 +17,7 @@ export const Form = styled('form', {
 
   h1: {
     textAlign: 'center',
-    
+
     fontWeight: 700,
     lineHeight: '130%',
     fontSize: '6rem',
@@ -60,8 +60,8 @@ export const Form = styled('form', {
 
     '&:focus': {
       outline: '$blue500 solid 2px',
-    }
-  }
+    },
+  },
 })
 
 export const Content = styled('main', {
@@ -71,7 +71,7 @@ export const Content = styled('main', {
   padding: '0 1rem',
   paddingTop: '11.25rem',
 
-  backgroundColor: '$purpleCodify900B'
+  backgroundColor: '$purpleCodify900B',
 })
 
 export const FreelasContainer = styled('div', {
@@ -90,5 +90,5 @@ export const Freelas = styled('div', {
 
   '@media (max-width: 800px)': {
     gridTemplateColumns: '1fr',
-  }
+  },
 })

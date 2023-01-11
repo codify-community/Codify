@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const Container = styled('main', {
   display: 'flex',
@@ -23,7 +23,7 @@ export const Banner = styled('div', {
     position: 'absolute',
     top: 0,
     left: 0,
-    
+
     width: '100%',
     height: '100%',
 
@@ -33,7 +33,7 @@ export const Banner = styled('div', {
     boxShadow: 'inset 0px 4px 0px 600px rgba(31, 14, 63, 0.76)',
     filter: 'blur(8px)',
 
-    zIndex: -1, 
+    zIndex: -1,
   },
 })
 
@@ -41,7 +41,7 @@ export const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  
+
   maxWidth: '1440px',
   width: '100%',
 
@@ -83,7 +83,7 @@ export const Content = styled('div', {
 
     '&:hover': {
       backgroundColor: '$blue500',
-    }
+    },
   },
 
   '@media (max-width: 525px)': {
@@ -122,14 +122,14 @@ export const About = styled('div', {
 
     img: {
       alignSelf: 'center',
-    }
+    },
   },
 
   '@media (max-width: 488px)': {
     img: {
       width: '100%',
       height: 'auto',
-    }
+    },
   },
 
   p: {
@@ -137,12 +137,12 @@ export const About = styled('div', {
     fontSize: '2.5rem',
     fontWeight: 'bold',
     maxWidth: '50rem',
-  }
+  },
 })
 
 export const DetailCards = styled('div', {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(14.312rem, 1fr))',  
+  gridTemplateColumns: 'repeat(auto-fit, minmax(14.312rem, 1fr))',
 
   gap: '2.5rem',
 
@@ -152,14 +152,14 @@ export const DetailCards = styled('div', {
   '@media (max-width: 1079px) and (min-width: 799px)': {
     ':last-child': {
       gridColumn: '1 / span 3',
-    }
+    },
   },
 
   '@media (max-width: 700px) and (min-width: 600px)': {
     ':last-child': {
       gridColumn: '1 / span 3',
-    }
-  }
+    },
+  },
 })
 
 export const CardSection = styled('section', {

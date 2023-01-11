@@ -1,16 +1,24 @@
-import Image from "next/image"
+import Image from 'next/image'
 
-import { formatDistanceToNow } from "date-fns"
-import { ptBR } from "date-fns/locale"
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
-import { Clock, CurrencyDollar } from "phosphor-react"
+import { Clock, CurrencyDollar } from 'phosphor-react'
 
-import { Author, FreelaHeaderContainer, Profile, Header, Tags, Info, FreelaHeaderLink } from "../../styles/components/codefreelas/FreelaHeader"
-import { theme } from "../../styles"
+import {
+  Author,
+  FreelaHeaderContainer,
+  Profile,
+  Header,
+  Tags,
+  Info,
+  FreelaHeaderLink,
+} from '../../styles/components/codefreelas/FreelaHeader'
+import { theme } from '../../styles'
 
-import { Freela } from "../../pages/codefreelas/freela/[userId]/[freelaId]";
-import { Tag } from "../Tag"
-import { Contact } from "../Contact"
+import { Freela } from '../../pages/codefreelas/freela/[userId]/[freelaId]'
+import { Tag } from '../Tag'
+import { Contact } from '../Contact'
 
 interface FreelaHeaderProps {
   freela: Freela
@@ -32,15 +40,21 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
               <strong>{freela.user_name}</strong>
             </Profile>
           </FreelaHeaderLink>
-          <Contact discord={freela.user_id} whatsapp={freela.user_whatsapp} instagram={freela.user_instagram} />
+          <Contact
+            discord={freela.user_id}
+            whatsapp={freela.user_whatsapp}
+            instagram={freela.user_instagram}
+          />
         </Author>
-        <time dateTime={new Date(freela.createdAt).toISOString()}>{FormattedDate}</time>
+        <time dateTime={new Date(freela.createdAt).toISOString()}>
+          {FormattedDate}
+        </time>
       </Header>
 
       <h2>{freela.title}</h2>
 
       <Tags>
-        {freela.technologies.map(technology => (
+        {freela.technologies.map((technology) => (
           <Tag key={technology} name={technology} />
         ))}
       </Tags>

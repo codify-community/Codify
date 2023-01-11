@@ -1,6 +1,6 @@
-import { styled } from "..";
+import { styled } from '..'
 
-export const Error404Container = styled("div", {
+export const Error404Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -12,15 +12,15 @@ export const Error404Container = styled("div", {
 
   textAlign: 'center',
 
-  backgroundColor: "$purpleCodify900B",
+  backgroundColor: '$purpleCodify900B',
 
   strong: {
-    fontFamily: "PT Sans",
-    fontSize: "3.75rem",
+    fontFamily: 'PT Sans',
+    fontSize: '3.75rem',
   },
 
   img: {
-    width: "80%",
-    maxWidth: "40rem",
-  }
+    width: '80%',
+    maxWidth: '40rem',
+  },
 })

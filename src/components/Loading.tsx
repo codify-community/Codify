@@ -1,7 +1,5 @@
-import Image from "next/image";
-
-import { LoadingContainer } from "../styles/components/loading";
-import { Title } from "./Title";
+import { LoadingContainer } from '../styles/components/loading'
+import { Title } from './Title'
 
 export function Loading() {
   return (

@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const FooterContainer = styled('footer', {
   backgroundColor: '$purpleCodify900B',
@@ -12,7 +12,7 @@ export const FooterContainer = styled('footer', {
 })
 
 export const Content = styled('div', {
-  maxWidth: '1440px', 
+  maxWidth: '1440px',
   width: '100%',
 
   display: 'flex',
@@ -21,7 +21,7 @@ export const Content = styled('div', {
   '@media (max-width: 525px)': {
     flexDirection: 'column',
     gap: '1.5rem',
-  }
+  },
 })
 
 export const Contact = styled('div', {
@@ -46,15 +46,15 @@ export const Contact = styled('div', {
         transition: 'all 0.3s ease-in-out',
         '-webkit-transition': '0.5s ease-in',
         rotate: '360deg',
-      }
-    }
+      },
+    },
   },
 
   '@media (max-width: 525px)': {
     svg: {
       width: '6rem',
-    }
-  }
+    },
+  },
 })
 
 export const Codify = styled('div', {

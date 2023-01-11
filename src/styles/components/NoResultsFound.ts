@@ -1,23 +1,23 @@
-import { styled } from "..";
+import { styled } from '..'
 
-export const NoResultsFoundContainer = styled("div", {
-  display: "flex",
-  flexDirection: "column",
+export const NoResultsFoundContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
 
-  alignItems: "center",
+  alignItems: 'center',
 
   strong: {
-    fontFamily: "PT Sans",
-    fontSize: "4rem",
-    color: "$yellow500",
+    fontFamily: 'PT Sans',
+    fontSize: '4rem',
+    color: '$yellow500',
 
-    textAlign: "center",
+    textAlign: 'center',
   },
 
-  "@media (max-width: 700px)": {
+  '@media (max-width: 700px)': {
     img: {
-      width: "15rem",
-      height: "15rem",
-    }
-  }
+      width: '15rem',
+      height: '15rem',
+    },
+  },
 })

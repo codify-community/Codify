@@ -1,11 +1,15 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
 import { useEffect, useState } from 'react'
 
-import { HeaderContainer, Content, Navigation } from "../styles/components/Header";
+import {
+  HeaderContainer,
+  Content,
+  Navigation,
+} from '../styles/components/Header'
 
-import Logo from "../assets/logo.png"
+import Logo from '../assets/logo.png'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)

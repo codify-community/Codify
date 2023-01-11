@@ -1,5 +1,4 @@
-import { before } from 'node:test';
-import { styled } from '../..';
+import { styled } from '../..'
 
 export const MemberCardContainer = styled('div', {
   position: 'relative',
@@ -9,7 +8,7 @@ export const MemberCardContainer = styled('div', {
   alignItems: 'center',
 
   backgroundColor: '$purpleCodify700',
-  
+
   borderRadius: 8,
 
   transition: 'background-color 0.3s ease-in-out',
@@ -38,20 +37,20 @@ export const Role = styled('div', {
 
   variants: {
     role: {
-      "booster": {
+      booster: {
         backgroundColor: '$purpleCodify500',
       },
-      "mod": {
+      mod: {
         backgroundColor: '$blue500',
       },
-      "admin": {
+      admin: {
         backgroundColor: '$red500',
       },
-      "owner": {
+      owner: {
         backgroundColor: '$yellow500',
-      }
-    }
-  }
+      },
+    },
+  },
 })
 
 export const Info = styled('div', {
@@ -108,8 +107,8 @@ export const Info = styled('div', {
       transition: 'all 0.3s ease-in-out',
       backgroundColor: '$white',
       color: '$purpleCodify900B',
-    }
-  }
+    },
+  },
 })
 
 export const SkillsContainer = styled('div', {

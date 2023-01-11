@@ -1,4 +1,4 @@
-import { globalCss } from ".";
+import { globalCss } from '.'
 
 export const globalStyles = globalCss({
   '*': {
@@ -41,6 +41,6 @@ export const globalStyles = globalCss({
   '@media (max-width: 700px)': {
     ':root': {
       fontSize: 12,
-    }
-  }
+    },
+  },
 })

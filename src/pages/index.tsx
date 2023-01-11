@@ -1,22 +1,32 @@
-import { GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
 
-import { TypeAnimation } from "react-type-animation";
+import { TypeAnimation } from 'react-type-animation'
 import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
 
-import { summaryApi } from "../lib/axios";
+import { summaryApi } from '../lib/axios'
 
 import 'keen-slider/keen-slider.min.css'
-import WaveSvg from "../assets/wave.svg"
-import AboutImage from "../assets/aboutMe.png"
-import { DiscordLogo } from "phosphor-react";
+import WaveSvg from '../assets/wave.svg'
+import AboutImage from '../assets/aboutMe.png'
+import { DiscordLogo } from 'phosphor-react'
 
-import { About, AboutContainer, Banner, CardSection, Container, Content, DetailCards, Wave, Cards } from "../styles/pages/home";
+import {
+  About,
+  AboutContainer,
+  Banner,
+  CardSection,
+  Container,
+  Content,
+  DetailCards,
+  Wave,
+  Cards,
+} from '../styles/pages/home'
 
-import { Title } from "../components/Title";
-import { DetailCard } from "../components/home/DetailCard";
-import { MemberCard } from "../components/home/MemberCard";
+import { Title } from '../components/Title'
+import { DetailCard } from '../components/home/DetailCard'
+import { MemberCard } from '../components/home/MemberCard'
 
 const sliderConfig = {
   loop: true,
@@ -54,26 +64,20 @@ const sliderAnimationConfig = (slider: KeenSliderInstance) => {
       if (slider.slides.length > 3) slider.next()
     }, 2000)
   }
-  slider.on("created", () => {
-    slider.container.addEventListener("mouseover", () => {
+  slider.on('created', () => {
+    slider.container.addEventListener('mouseover', () => {
       mouseOver = true
       clearNextTimeout()
     })
-    slider.container.addEventListener("mouseout", () => {
+    slider.container.addEventListener('mouseout', () => {
       mouseOver = false
       nextTimeout()
     })
     nextTimeout()
   })
-  slider.on("dragStarted", clearNextTimeout)
-  slider.on("animationEnded", nextTimeout)
-  slider.on("updated", nextTimeout)
-}
-
-interface HomeProps {
-  details: Details[]
-  staffs: Member[]
-  boosters: Member[]
+  slider.on('dragStarted', clearNextTimeout)
+  slider.on('animationEnded', nextTimeout)
+  slider.on('updated', nextTimeout)
 }
 
 interface Details {
@@ -93,25 +97,33 @@ export interface Member {
   technologies: string[]
 }
 
+interface HomeProps {
+  details: Details[]
+  staffs: Member[]
+  boosters: Member[]
+}
+
 export default function Home({ details, staffs, boosters }: HomeProps) {
   const [staffSliderRef] = useKeenSlider(
-  {
-    ...sliderConfig
-  },
-  [
-    (slider) => {
-      sliderAnimationConfig(slider)
-    },
-  ])
-  const [boosterSliderRef] = useKeenSlider(
     {
-      ...sliderConfig
+      ...sliderConfig,
     },
     [
       (slider) => {
         sliderAnimationConfig(slider)
       },
-  ])
+    ],
+  )
+  const [boosterSliderRef] = useKeenSlider(
+    {
+      ...sliderConfig,
+    },
+    [
+      (slider) => {
+        sliderAnimationConfig(slider)
+      },
+    ],
+  )
 
   return (
     <>
@@ -119,12 +131,12 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
         <title>Codify Community</title>
         <link rel="icon" href="/icon.png" />
       </Head>
-      
+
       <Container>
         <Banner>
           <Content>
             <h1>Codify Community</h1>
-            
+
             <TypeAnimation
               sequence={[
                 'Programação',
@@ -138,10 +150,14 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
               ]}
               wrapper="h2"
               cursor={true}
-              repeat={Infinity} 
+              repeat={Infinity}
             />
 
-            <a href="https://discord.com/invite/Hh6tUDy" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://discord.com/invite/Hh6tUDy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <DiscordLogo weight="fill" size={32} />
               Faça parte da nossa comunidade
             </a>
@@ -151,26 +167,32 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
         <Wave>
           <Image src={WaveSvg} alt="" fill />
         </Wave>
-        
+
         <AboutContainer>
           <Title text="Sobre nós" />
-          
+
           <About>
-            <p>Somos uma comunidade de desenvolvedores que tem como objetivo ajudar iniciantes no mundo da programação.</p>
+            <p>
+              Somos uma comunidade de desenvolvedores que tem como objetivo
+              ajudar iniciantes no mundo da programação.
+            </p>
             <Image src={AboutImage} alt="" width={489} height={489} />
           </About>
 
           <DetailCards>
-            {details.map(detail => (
-
-              <DetailCard key={detail.title} title={detail.title} value={detail.value} />
+            {details.map((detail) => (
+              <DetailCard
+                key={detail.title}
+                title={detail.title}
+                value={detail.value}
+              />
             ))}
           </DetailCards>
         </AboutContainer>
 
         <CardSection>
           <Title text="Staffs" />
-          
+
           <Cards ref={staffSliderRef} className="keen-slider">
             {staffs.map((member: Member) => (
               <MemberCard key={member.id} member={member} />
@@ -178,7 +200,7 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
           </Cards>
 
           <Title text="Boosters" />
-          
+
           <Cards ref={boosterSliderRef} className="keen-slider">
             {boosters.map((member: Member) => (
               <MemberCard key={member.id} member={member} />
@@ -199,6 +221,6 @@ export const getStaticProps: GetStaticProps = async () => {
       staffs: details.data.staffs,
       boosters: details.data.boosters,
     },
-    revalidate: 60 * 15 // 15 minutes
+    revalidate: 60 * 15, // 15 minutes
   }
 }

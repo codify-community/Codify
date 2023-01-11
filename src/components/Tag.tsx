@@ -1,11 +1,9 @@
-import { TagContainer } from "../styles/components/Tag"
+import { TagContainer } from '../styles/components/Tag'
 
 interface TechnologyProps {
   name: string
 }
 
 export function Tag({ name }: TechnologyProps) {
-  return (
-    <TagContainer>{name.toLowerCase()}</TagContainer>
-  )
+  return <TagContainer>{name.toLowerCase()}</TagContainer>
 }

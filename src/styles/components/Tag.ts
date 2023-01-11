@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const TagContainer = styled('div', {
   padding: '0 1rem',

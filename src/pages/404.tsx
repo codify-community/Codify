@@ -1,10 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Title } from "../components/Title";
+import Head from 'next/head'
+import Image from 'next/image'
+import { Title } from '../components/Title'
 
-import { Error404Container } from "../styles/pages/404";
+import { Error404Container } from '../styles/pages/404'
 
-import NotFound from "../assets/NotFound.svg";
+import NotFound from '../assets/NotFound.svg'
 
 export default function Page404() {
   return (

@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const Text = styled('h2', {
   fontFamily: 'PT Sans',
@@ -10,5 +10,5 @@ export const Text = styled('h2', {
 
   '@media (max-width: 327px)': {
     fontSize: '4rem',
-  }
+  },
 })

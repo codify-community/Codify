@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from '..'
 
 export const HeaderContainer = styled('header', {
   variants: {
@@ -9,10 +9,10 @@ export const HeaderContainer = styled('header', {
       },
     },
   },
-  
+
   zIndex: 1,
 
-  position: "sticky",
+  position: 'sticky',
   top: 0,
 
   display: 'flex',
@@ -26,14 +26,14 @@ export const HeaderContainer = styled('header', {
     img: {
       width: '100px',
       height: 'auto',
-    }
+    },
   },
 })
 
 export const Content = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',  
+  justifyContent: 'space-between',
 
   maxWidth: '1440px',
   width: '100%',
@@ -44,7 +44,7 @@ export const Navigation = styled('nav', {
   alignItems: 'center',
 
   gap: '1rem',
-  
+
   a: {
     textDecoration: 'none',
     borderBottom: '2px solid transparent',
@@ -56,6 +56,6 @@ export const Navigation = styled('nav', {
     '&:hover': {
       transition: 'all 0.2s ease-in-out',
       borderBottom: '2px solid $purpleCodify500',
-    }
-  }
+    },
+  },
 })

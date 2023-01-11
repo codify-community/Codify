@@ -1,4 +1,4 @@
-import { styled } from "../..";
+import { styled } from '../..'
 
 export const UserHeaderContainer = styled('div', {
   position: 'relative',
@@ -16,7 +16,7 @@ export const UserHeaderContainer = styled('div', {
   img: {
     borderRadius: 8,
     width: '9.25rem !important',
-  }
+  },
 })
 
 export const UserInformation = styled('div', {
@@ -41,7 +41,7 @@ export const Details = styled('div', {
     '@media (max-width: 660px)': {
       svg: {
         width: '1rem',
-      }
+      },
     },
   },
 

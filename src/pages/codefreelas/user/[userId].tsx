@@ -9,13 +9,16 @@ import { UserHeader } from '../../../components/codefreelas/UserHeader'
 
 import { codeFreelasApi } from '../../../lib/axios'
 
-import { Banner, UserContainer, Content, Posts, Header, ActivePostsSection } from '../../../styles/pages/codefreelas/user'
+import {
+  Banner,
+  UserContainer,
+  Content,
+  Posts,
+  Header,
+  ActivePostsSection,
+} from '../../../styles/pages/codefreelas/user'
 import { NoResultsFound } from '../../../components/NoResultsFound'
 import { useState } from 'react'
-
-interface UserProps {
-  user: User
-}
 
 export interface User {
   _id: string
@@ -28,6 +31,10 @@ export interface User {
   freelas: ResumeFreela[]
   total_posts: number
   active_posts: number
+}
+
+interface UserProps {
+  user: User
 }
 
 export default function UserPage({ user }: UserProps) {
@@ -56,29 +63,26 @@ export default function UserPage({ user }: UserProps) {
 
         <Content>
           <ActivePostsSection>
-            {
-              user.freelas.length === 0 ?
-              (<NoResultsFound />)
-              :
-              (
-                <>
-                  <Title text='Posts ativos' />
-                  <Posts>
-                    {user.freelas.map(freela => (
-                      <FreelaCard
-                        key={freela.id}
-                        freela={{
-                          ...freela,
-                          user_id: user._id,
-                          user_avatar: user.avatar_url,
-                          user_name: user.name,
-                        }}
-                      />
-                    ))}
-                  </Posts>
-                </>
-              )
-            }
+            {user.freelas.length === 0 ? (
+              <NoResultsFound />
+            ) : (
+              <>
+                <Title text="Posts ativos" />
+                <Posts>
+                  {user.freelas.map((freela) => (
+                    <FreelaCard
+                      key={freela.id}
+                      freela={{
+                        ...freela,
+                        user_id: user._id,
+                        user_avatar: user.avatar_url,
+                        user_name: user.name,
+                      }}
+                    />
+                  ))}
+                </Posts>
+              </>
+            )}
           </ActivePostsSection>
         </Content>
       </UserContainer>
@@ -86,7 +90,10 @@ export default function UserPage({ user }: UserProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps<any, { userId: string }> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<
+  any,
+  { userId: string }
+> = async ({ params }) => {
   const userId = params?.userId
 
   try {
@@ -95,13 +102,13 @@ export const getServerSideProps: GetServerSideProps<any, { userId: string }> = a
     return {
       props: {
         user: {
-          ...user.data
-        }
-      }
+          ...user.data,
+        },
+      },
     }
   } catch (err) {
-    return { 
-      notFound: true 
+    return {
+      notFound: true,
     }
   }
 }
