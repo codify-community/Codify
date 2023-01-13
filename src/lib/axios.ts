@@ -1,9 +1,9 @@
 import Axios from 'axios'
 
 export const codeFreelasApi = Axios.create({
-  baseURL: process.env.codefreelas,
+  baseURL: 'http://localhost:2501/codify',
 })
 
 export const summaryApi = Axios.create({
-  baseURL: process.env.summary,
+  baseURL: 'http://localhost:2502/',
 })
