@@ -39,6 +39,16 @@ export default function FreelaPage({ freela }: FreelaPageProps) {
       <Head>
         <title>Codify Community</title>
         <link rel="icon" href="/icon.png" />
+
+        <meta property="og:title" content={`${freela.title}`} />
+
+        <meta property="og:description" content={freela.description} />
+        <meta name="description" content={freela.description} />
+
+        <meta property="og:image" content={freela.user_avatar} />
+        <meta property="og:image:width" content="128" />
+        <meta property="og:image:height" content="128" />
+        <meta property="og:type" content="article" />
       </Head>
 
       <FreelaContainer>

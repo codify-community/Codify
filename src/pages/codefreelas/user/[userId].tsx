@@ -45,16 +45,26 @@ export default function UserPage({ user }: UserProps) {
       <Head>
         <title>Codify Community</title>
         <link rel="icon" href="/icon.png" />
+
+        <meta property="og:title" content={`${user.name}`} />
+
+        <meta property="og:description" content={user.description} />
+        <meta name="description" content={user.description} />
+
+        <meta property="og:image" content={user.avatar_url} />
+        <meta property="og:image:width" content="128" />
+        <meta property="og:image:height" content="128" />
+        <meta property="og:type" content="article" />
       </Head>
 
       <UserContainer>
         <Banner>
           <Image
-            src={banner || 'https://i.imgur.com/KvPsXMF.jpg'}
+            src={banner || 'https://i.imgur.com/L1KaXjH.jpeg'}
             alt=""
             width={1660}
             height={533}
-            onError={() => setBanner('https://i.imgur.com/KvPsXMF.jpg')}
+            onError={() => setBanner('https://i.imgur.com/L1KaXjH.jpeg')}
           />
           <Header>
             <UserHeader user={user} />
