@@ -29,7 +29,7 @@ export const Content = styled('div', {
   backgroundColor: '$purpleCodify900B',
 
   padding: '0 1rem',
-  paddingTop: '7rem',
+  paddingTop: '2rem',
 })
 
 export const ActivePostsSection = styled('section', {
