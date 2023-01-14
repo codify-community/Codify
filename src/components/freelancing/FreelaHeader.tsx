@@ -62,7 +62,7 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
       <Info>
         <div>
           <CurrencyDollar size={22} color={theme.colors.green400.value} />
-          <p>{freela.price}</p>
+          <p>{freela.price} R$</p>
         </div>
         <div>
           <Clock size={22} color={theme.colors.gray400.value} />

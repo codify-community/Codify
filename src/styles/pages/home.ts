@@ -16,6 +16,7 @@ export const Banner = styled('div', {
   height: '56.937rem',
 
   paddingTop: '7.5rem',
+  marginTop: '7rem',
 
   '::before': {
     content: '',

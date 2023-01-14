@@ -10,6 +10,7 @@ export const Header = styled('header', {
 
   margin: '0 auto',
   marginBottom: -115,
+  marginTop: '7rem',
 
   maxWidth: '1440px',
   width: '100%',
@@ -36,6 +37,7 @@ export const Content = styled('div', {
   div: {
     maxWidth: '1440px',
     width: '100%',
+    overflow: 'hidden',
 
     padding: '2.5rem 2rem',
 
