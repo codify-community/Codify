@@ -63,6 +63,17 @@ export default function Home({ freelas }: HomeProps) {
       <Head>
         <title>Codify Community</title>
         <link rel="icon" href="/icon.png" />
+
+        <meta property="og:title" content="Codify Community Freelancing" />
+
+        <meta
+          property="og:description"
+          content="Serviço de freelance para desenvolvedores. Encontre freelancers para desenvolver seu projeto e encontre projetos para trabalhar."
+        />
+        <meta
+          name="description"
+          content="Serviço de freelance para desenvolvedores. Encontre freelancers para desenvolver seu projeto e encontre projetos para trabalhar."
+        />
       </Head>
 
       <FormContainer>
