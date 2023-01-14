@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { ResumeFreela } from '..'
 import { FreelaCard } from '../../../components/FreelaCard'
 import { Title } from '../../../components/Title'
-import { UserHeader } from '../../../components/codefreelas/UserHeader'
+import { UserHeader } from '../../../components/freelancing/UserHeader'
 
-import { codeFreelasApi } from '../../../lib/axios'
+import { freelancingApi } from '../../../lib/axios'
 
 import {
   Banner,
@@ -16,7 +16,7 @@ import {
   Posts,
   Header,
   ActivePostsSection,
-} from '../../../styles/pages/codefreelas/user'
+} from '../../../styles/pages/freelancing/user'
 import { NoResultsFound } from '../../../components/NoResultsFound'
 import { useState } from 'react'
 
@@ -45,16 +45,26 @@ export default function UserPage({ user }: UserProps) {
       <Head>
         <title>Codify Community</title>
         <link rel="icon" href="/icon.png" />
+
+        <meta property="og:title" content={`${user.name}`} />
+
+        <meta property="og:description" content={user.description} />
+        <meta name="description" content={user.description} />
+
+        <meta property="og:image" content={user.avatar_url} />
+        <meta property="og:image:width" content="128" />
+        <meta property="og:image:height" content="128" />
+        <meta property="og:type" content="article" />
       </Head>
 
       <UserContainer>
         <Banner>
           <Image
-            src={banner || 'https://i.imgur.com/KvPsXMF.jpg'}
+            src={banner || 'https://i.imgur.com/L1KaXjH.jpeg'}
             alt=""
             width={1660}
             height={533}
-            onError={() => setBanner('https://i.imgur.com/KvPsXMF.jpg')}
+            onError={() => setBanner('https://i.imgur.com/L1KaXjH.jpeg')}
           />
           <Header>
             <UserHeader user={user} />
@@ -97,7 +107,7 @@ export const getServerSideProps: GetServerSideProps<
   const userId = params?.userId
 
   try {
-    const user = await codeFreelasApi.get(`/${userId}`)
+    const user = await freelancingApi.get(`/${userId}`)
 
     return {
       props: {

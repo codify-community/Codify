@@ -69,7 +69,7 @@ export const Content = styled('main', {
   flexDirection: 'column',
 
   padding: '0 1rem',
-  paddingTop: '11.25rem',
+  paddingTop: '8rem',
 
   backgroundColor: '$purpleCodify900B',
 })

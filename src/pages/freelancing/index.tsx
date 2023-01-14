@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 
 import React, { useState } from 'react'
 
-import { codeFreelasApi } from '../../lib/axios'
+import { freelancingApi } from '../../lib/axios'
 
 import {
   FormContainer,
@@ -11,7 +11,7 @@ import {
   Content,
   FreelasContainer,
   Freelas,
-} from '../../styles/pages/codefreelas/home'
+} from '../../styles/pages/freelancing/home'
 
 import { Title } from '../../components/Title'
 import { FreelaCard } from '../../components/FreelaCard'
@@ -63,6 +63,17 @@ export default function Home({ freelas }: HomeProps) {
       <Head>
         <title>Codify Community</title>
         <link rel="icon" href="/icon.png" />
+
+        <meta property="og:title" content="Codify Community Freelancing" />
+
+        <meta
+          property="og:description"
+          content="Serviço de freelance para desenvolvedores. Encontre freelancers para desenvolver seu projeto e encontre projetos para trabalhar."
+        />
+        <meta
+          name="description"
+          content="Serviço de freelance para desenvolvedores. Encontre freelancers para desenvolver seu projeto e encontre projetos para trabalhar."
+        />
       </Head>
 
       <FormContainer>
@@ -107,7 +118,7 @@ export default function Home({ freelas }: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await codeFreelasApi.get('/freela')
+  const response = await freelancingApi.get('/freela')
 
   return {
     props: {

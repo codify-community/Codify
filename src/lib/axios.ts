@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const codeFreelasApi = Axios.create({
+export const freelancingApi = Axios.create({
   baseURL: 'http://localhost:2501/codify',
 })
 
