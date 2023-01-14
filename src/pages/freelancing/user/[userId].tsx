@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { ResumeFreela } from '..'
 import { FreelaCard } from '../../../components/FreelaCard'
 import { Title } from '../../../components/Title'
-import { UserHeader } from '../../../components/codefreelas/UserHeader'
+import { UserHeader } from '../../../components/freelancing/UserHeader'
 
-import { codeFreelasApi } from '../../../lib/axios'
+import { freelancingApi } from '../../../lib/axios'
 
 import {
   Banner,
@@ -16,7 +16,7 @@ import {
   Posts,
   Header,
   ActivePostsSection,
-} from '../../../styles/pages/codefreelas/user'
+} from '../../../styles/pages/freelancing/user'
 import { NoResultsFound } from '../../../components/NoResultsFound'
 import { useState } from 'react'
 
@@ -107,7 +107,7 @@ export const getServerSideProps: GetServerSideProps<
   const userId = params?.userId
 
   try {
-    const user = await codeFreelasApi.get(`/${userId}`)
+    const user = await freelancingApi.get(`/${userId}`)
 
     return {
       props: {

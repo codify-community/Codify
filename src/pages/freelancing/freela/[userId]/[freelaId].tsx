@@ -1,13 +1,13 @@
 import { GetServerSideProps } from 'next'
-import { codeFreelasApi } from '../../../../lib/axios'
+import { freelancingApi } from '../../../../lib/axios'
 
-import { FreelaHeader } from '../../../../components/codefreelas/FreelaHeader'
+import { FreelaHeader } from '../../../../components/freelancing/FreelaHeader'
 
 import {
   FreelaContainer,
   Header,
   Content,
-} from '../../../../styles/pages/codefreelas/freela'
+} from '../../../../styles/pages/freelancing/freela'
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -77,7 +77,7 @@ export const getServerSideProps: GetServerSideProps<
   const freelaId = params?.freelaId
 
   try {
-    const freela = await codeFreelasApi.get(`/${userId}/${freelaId}`)
+    const freela = await freelancingApi.get(`/${userId}/${freelaId}`)
 
     return {
       props: {

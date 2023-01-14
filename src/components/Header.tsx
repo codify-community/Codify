@@ -38,8 +38,8 @@ export function Header() {
         </Link>
 
         <Navigation>
-          <Link href="/codefreelas" prefetch={false}>
-            <p>CodeFreelas</p>
+          <Link href="/freelancing" prefetch={false}>
+            <p>Freelancing</p>
           </Link>
         </Navigation>
       </Content>

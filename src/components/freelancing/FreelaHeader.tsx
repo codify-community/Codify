@@ -16,7 +16,7 @@ import {
 } from '../../styles/components/codefreelas/FreelaHeader'
 import { theme } from '../../styles'
 
-import { Freela } from '../../pages/codefreelas/freela/[userId]/[freelaId]'
+import { Freela } from '../../pages/freelancing/freela/[userId]/[freelaId]'
 import { Tag } from '../Tag'
 import { Contact } from '../Contact'
 
@@ -34,7 +34,7 @@ export function FreelaHeader({ freela }: FreelaHeaderProps) {
     <FreelaHeaderContainer>
       <Header>
         <Author>
-          <FreelaHeaderLink href={`/codefreelas/user/${freela.user_id}`}>
+          <FreelaHeaderLink href={`/freelancing/user/${freela.user_id}`}>
             <Profile>
               <Image src={freela.user_avatar} alt="" width={38} height={38} />
               <strong>{freela.user_name}</strong>

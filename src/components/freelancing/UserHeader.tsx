@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { Package, PaperPlaneTilt } from 'phosphor-react'
-import { User } from '../../pages/codefreelas/user/[userId]'
+import { User } from '../../pages/freelancing/user/[userId]'
 import { theme } from '../../styles'
 
 import {

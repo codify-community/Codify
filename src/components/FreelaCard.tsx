@@ -16,7 +16,7 @@ import {
 import { Tag } from './Tag'
 import { theme } from '../styles'
 
-import { ResumeFreela } from '../pages/codefreelas'
+import { ResumeFreela } from '../pages/freelancing'
 
 interface FreelaCardProps {
   freela: ResumeFreela
@@ -35,7 +35,7 @@ export function FreelaCard({ freela }: FreelaCardProps) {
 
   return (
     <FreelaLink
-      href={`/codefreelas/freela/${freela.user_id}/${freela.id}`}
+      href={`/freelancing/freela/${freela.user_id}/${freela.id}`}
       prefetch={false}
     >
       <FreelaCardContainer>
@@ -64,11 +64,11 @@ export function FreelaCard({ freela }: FreelaCardProps) {
         <Footer>
           <div>
             <CurrencyDollar size={22} color={theme.colors.green400.value} />
-            <p>{freela.price}</p>
+            <p>{freela.price} R$</p>
           </div>
           <div>
             <Clock size={22} color={theme.colors.gray400.value} />
-            <p>{freela.deadline}</p>
+            <p>{freela.deadline.toLowerCase()}</p>
           </div>
         </Footer>
       </FreelaCardContainer>
