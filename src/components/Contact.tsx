@@ -24,7 +24,7 @@ export function Contact({ discord, instagram, whatsapp }: ContactProps) {
         />
       </a>
       {whatsapp && (
-        <a href={`https://wa.me/${instagram}`} target="_blank" rel="noreferrer">
+        <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer">
           <WhatsappLogo
             weight="fill"
             size={32}
@@ -34,7 +34,7 @@ export function Contact({ discord, instagram, whatsapp }: ContactProps) {
       )}
       {instagram && (
         <a
-          href={`https://www.instagram.com/${whatsapp}`}
+          href={`https://www.instagram.com/${instagram}`}
           target="_blank"
           rel="noreferrer"
         >
