@@ -73,25 +73,23 @@ export default function UserPage({ user }: UserProps) {
 
         <Content>
           <ActivePostsSection>
+            <Title text="Posts ativos" />
             {user.freelas.length === 0 ? (
               <NoResultsFound />
             ) : (
-              <>
-                <Title text="Posts ativos" />
-                <Posts>
-                  {user.freelas.map((freela) => (
-                    <FreelaCard
-                      key={freela.id}
-                      freela={{
-                        ...freela,
-                        user_id: user._id,
-                        user_avatar: user.avatar_url,
-                        user_name: user.name,
-                      }}
-                    />
-                  ))}
-                </Posts>
-              </>
+              <Posts>
+                {user.freelas.map((freela) => (
+                  <FreelaCard
+                    key={freela.id}
+                    freela={{
+                      ...freela,
+                      user_id: user._id,
+                      user_avatar: user.avatar_url,
+                      user_name: user.name,
+                    }}
+                  />
+                ))}
+              </Posts>
             )}
           </ActivePostsSection>
         </Content>
