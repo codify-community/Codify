@@ -8,7 +8,7 @@ import {
   Codify,
 } from '../styles/components/Footer'
 
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.svg'
 
 export function Footer() {
   return (
@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </Contact>
         <Codify>
-          &copy; 2022 Codify Community
+          &copy; 2023 Codify Community
           <Image src={Logo} alt="" width={190} height={73} />
         </Codify>
       </Content>

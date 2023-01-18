@@ -9,7 +9,7 @@ import {
   Navigation,
 } from '../styles/components/Header'
 
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.svg'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
