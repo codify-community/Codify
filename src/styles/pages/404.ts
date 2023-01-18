@@ -8,7 +8,7 @@ export const Error404Container = styled('div', {
 
   margin: 'auto',
 
-  height: '67.5vh',
+  height: '79.3vh',
 
   textAlign: 'center',
 
