@@ -62,7 +62,7 @@ export default function Home({ freelas }: HomeProps) {
     <>
       <Head>
         <title>Codify Community</title>
-        <link rel="icon" href="/icon.svg" />
+        <link rel="icon" href="/logo.svg" />
 
         <meta property="og:title" content="Codify Community Freelancing" />
 

@@ -44,7 +44,7 @@ export default function UserPage({ user }: UserProps) {
     <>
       <Head>
         <title>Codify Community</title>
-        <link rel="icon" href="/icon.svg" />
+        <link rel="icon" href="/logo.svg" />
 
         <meta property="og:title" content={`${user.name}`} />
 
