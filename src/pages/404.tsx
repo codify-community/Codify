@@ -11,7 +11,7 @@ export default function Page404() {
     <>
       <Head>
         <title>Codify Community</title>
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/icon.svg" />
       </Head>
       <main>
         <Error404Container>

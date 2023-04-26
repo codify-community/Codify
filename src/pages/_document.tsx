@@ -1,8 +1,6 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 import { getCssText } from '../styles'
 
-import Logo from '../assets/logo.svg'
-
 export default function Document() {
   return (
     <Html>
@@ -30,8 +28,8 @@ export default function Document() {
           content="Somos uma comunidade de desenvolvedores que tem como objetivo ajudar iniciantes no mundo da programação."
         />
 
-        <meta property="og:image" content={Logo} />
-        <meta property="og:image:type" content="image/svg+xml" />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:type" content="website" />
