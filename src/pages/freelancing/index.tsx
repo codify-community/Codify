@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 
 import React, { useState } from 'react'
 
-import { freelancingApi } from '../../lib/axios'
+// import { freelancingApi } from '../../lib/axios'
 
 import {
   FormContainer,
@@ -118,11 +118,12 @@ export default function Home({ freelas }: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await freelancingApi.get('/freela')
+  // const response = await freelancingApi.get('/freela')
 
   return {
     props: {
-      freelas: response.data,
+      // freelas: response.data,
+      freelas: [],
     },
   }
 }
