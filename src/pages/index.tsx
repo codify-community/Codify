@@ -213,7 +213,9 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const details = await summaryApi.get('/summary')
+  const details = await summaryApi.get('/summary', {
+    headers: { 'Accept-Encoding': 'gzip,deflate,compress' },
+  })
 
   return {
     props: {

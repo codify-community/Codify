@@ -5,5 +5,5 @@ export const freelancingApi = Axios.create({
 })
 
 export const summaryApi = Axios.create({
-  baseURL: 'http://localhost:2502/',
+  baseURL: process.env.STATUS_API_URL,
 })
