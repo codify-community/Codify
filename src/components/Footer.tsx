@@ -25,7 +25,7 @@ export function Footer() {
               <GithubLogo weight="fill" size={60} />
             </a>
             <a
-              href="https://discord.com/invite/Hh6tUDy"
+              href="https://discord.com/invite/hU27wXZEns"
               target="_blank"
               rel="noreferrer"
             >
