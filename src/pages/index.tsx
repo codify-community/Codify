@@ -154,7 +154,7 @@ export default function Home({ details, staffs, boosters }: HomeProps) {
             />
 
             <a
-              href="https://discord.com/invite/Hh6tUDy"
+              href="https://discord.com/invite/hU27wXZEns"
               target="_blank"
               rel="noopener noreferrer"
             >
